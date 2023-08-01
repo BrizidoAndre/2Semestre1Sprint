@@ -1,15 +1,15 @@
-Construa o Modelo Entidade Relacionamento considerando o seguinte cenário:
+Construa o Modelo Entidade Relacionamento considerando o seguinte cenï¿½rio:
 
-- uma empresa possui vários veículos
-- um veículo possui marca(gm, ford, fiat), modelo(onix, fiesta, argo) e placa
-- um cliente (cpf, nome) aluga um ou mais veículos
+- uma empresa possui vï¿½rios veï¿½culos
+- um veï¿½culo possui marca(gm, ford, fiat), modelo(onix, fiesta, argo) e placa
+- um cliente (cpf, nome) aluga um ou mais veï¿½culos
 
 DML
 
-- um registro de aluguel deve conter qual cliente alugou, o veículo alugado, data de retirada e data de devolução
+- um registro de aluguel deve conter qual cliente alugou, o veï¿½culo alugado, data de retirada e data de devoluï¿½ï¿½o
 
 
 DQL
 
-- listar todos os alugueis mostrando as datas de início e fim, o nome do cliente que alugou e nome do modelo do carro
-- listar os alugueis de um determinado cliente mostrando seu nome, as datas de início e fim e o nome do modelo do carro
+- listar todos os alugueis mostrando as datas de inï¿½cio e fim, o nome do cliente que alugou e nome do modelo do carro
+- listar os alugueis de um determinado cliente mostrando seu nome, as datas de inï¿½cio e fim e o nome do modelo do carro
