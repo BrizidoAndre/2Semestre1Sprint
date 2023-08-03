@@ -8,6 +8,8 @@ VALUES
 	('Augusto','8192034576'),
 	('Zacarias','0987654321'),
 	('Hernandes','0192837465'),
+	('SemTel','0151837123'),
+	('SemMail','0151837123'),
 	('SemMailNemTel','0151837123')
 
 INSERT INTO Email(IdPessoa,Email)
@@ -16,15 +18,17 @@ VALUES
 	(2,'AugustoJulho@gmail.com'),
 	(3,'Zacarizaz@gmail.com'),
 	(4,'HernandeMaunel@gmail.com'),
-	(4,'ManuelHernandez@gmail.com')
+	(4,'ManuelHernandez@gmail.com'),
+	(5,'semTel@gmail.com'),
 
 INSERT INTO Telefone(IdPessoa,Numero)
-VALUES 
+VALUES
 	(1,'11912347291'),
 	(2,'11531342293'),
 	(3,'11918867293'),
 	(4,'11971245093'),
-	(2,'11918265236')
+	(2,'11918265236'),
+	(6,'11918265236')
 
 --Comando para visualizar as tabelas criadas
 
@@ -56,4 +60,47 @@ AND Pessoa.IdPessoa = Telefone.IdPessoa
 
 ORDER BY Pessoa.Nome DESC
 
---MELHOR JEITO DE MOSTRAR TODOS OS VALORES EM UMA ÚNICA TABELA
+--OUTRO JEITO DE MOSTRAR A TABELA COMO DA FORMA ACIMA
+--EXATAMENTE IGUAL
+SELECT
+	Nome,
+	CNH,
+	Email,
+	Numero
+FROM
+	Pessoa
+INNER JOIN Email ON Pessoa.IdPessoa = Email.IdPessoa
+INNER JOIN	Telefone ON Pessoa.IdPessoa = Telefone.IdPessoa
+
+
+
+--Essa seleção nos mostra Todos os clientes que não registraram o número de telefone
+
+SELECT
+	Pessoa.IdPessoa as ID,
+	Pessoa.Nome as Cliente,
+	Pessoa.CNH,
+	Telefone.Numero AS COMPRA,
+	Email.Email AS Email
+FROM
+	Pessoa
+LEFT JOIN
+	Telefone ON Pessoa.IdPessoa = Telefone.IdPessoa
+LEFT JOIN
+	Email ON Pessoa.IdPessoa = Email.IdPessoa
+WHERE Telefone.Numero IS NULL
+
+
+
+--MELHOR JEITO DE MOSTRAR TODOS OS VALORES EM UMA ÚNICA TABELA, MESMO COM VALORES SEM CORRESPONDÊNCIA
+
+SELECT
+	NOME,
+	Email,
+	Numero as Telefone
+FROM
+	Pessoa
+LEFT JOIN
+	Email ON Pessoa.IdPessoa = Email.IdPessoa
+LEFT JOIN
+	Telefone ON Pessoa.IdPessoa = Telefone.IdPessoa

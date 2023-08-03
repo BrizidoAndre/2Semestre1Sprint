@@ -25,4 +25,3 @@ CREATE TABLE Telefone(
 	Numero VARCHAR (30) NOT NULL
 )
 
-DROP DATABASE Exercicio_1_1
