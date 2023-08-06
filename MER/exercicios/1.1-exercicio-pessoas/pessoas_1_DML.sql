@@ -19,7 +19,7 @@ VALUES
 	(3,'Zacarizaz@gmail.com'),
 	(4,'HernandeMaunel@gmail.com'),
 	(4,'ManuelHernandez@gmail.com'),
-	(5,'semTel@gmail.com'),
+	(5,'semTel@gmail.com')
 
 INSERT INTO Telefone(IdPessoa,Numero)
 VALUES
@@ -33,7 +33,11 @@ VALUES
 --Comando para visualizar as tabelas criadas
 
 --PARA VISUALIZAR AS TABELAS SEPARADAS
-SELECT * FROM Pessoa
+SELECT 
+	Pessoa.Nome,
+	Pessoa.CNH
+FROM 
+	Pessoa
 SELECT * FROM Email
 SELECT * FROM Telefone
 
@@ -80,7 +84,7 @@ SELECT
 	Pessoa.IdPessoa as ID,
 	Pessoa.Nome as Cliente,
 	Pessoa.CNH,
-	Telefone.Numero AS COMPRA,
+	Telefone.Numero AS Celular,
 	Email.Email AS Email
 FROM
 	Pessoa
@@ -95,8 +99,8 @@ WHERE Telefone.Numero IS NULL
 --MELHOR JEITO DE MOSTRAR TODOS OS VALORES EM UMA ÚNICA TABELA, MESMO COM VALORES SEM CORRESPONDÊNCIA
 
 SELECT
-	NOME,
-	Email,
+	Pessoa.NOME,
+	Email.Email,
 	Numero as Telefone
 FROM
 	Pessoa
