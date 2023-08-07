@@ -1,0 +1,14 @@
+Ideias para o exercício
+
+Uma tabela contendo o nome, senha, email,
+
+O trigger ocorre quando um update nessa tabela acontesse
+ 
+Inserindo em uma nova tabela os dados informando em quais clientes houve a mudança da senha cadastrada.
+
+
+OU
+
+Ocorre o trigger após o update novamente.
+
+Desta vezs o trigger pegará os dados que o cliente ainda não atualizou e o guardará em uma outra tabela de Back Up
