@@ -1,0 +1,55 @@
+--DDL Database Definition Language
+--Criar banco de dados
+CREATE DATABASE [Event+Manha]
+USE [Event+Manha]
+
+--Criar tabelas
+CREATE TABLE TipoDeUsuario(
+	IdTipoDeUsuario INT PRIMARY KEY IDENTITY,
+	TituloTipoUsuario VARCHAR(20) NOT NULL UNIQUE
+)
+
+CREATE TABLE TipoDeEvento(
+	IdTipoDeEvento INT PRIMARY KEY IDENTITY,
+	TituloTipoEvento VARCHAR(40) UNIQUE NOT NULL
+)
+
+CREATE TABLE Instituicao(
+	IdInstituicao INT PRIMARY KEY IDENTITY,
+	CNPJ VARCHAR(14) UNIQUE NOT NULL,
+	Endereco VARCHAR(100) NOT NULL,
+	NomeFantasia VARCHAR(50) NOT NULL
+)
+
+CREATE TABLE Usuario(
+	IdUsuario INT PRIMARY KEY IDENTITY,
+	IdTipoDeUsuario INT FOREIGN KEY REFERENCES TipoDeUsuario(IdTipoDeUsuario) NOT NULL,
+	Nome VARCHAR(50) NOT NULL,
+	Email VARCHAR(256) NOT NULL,
+	Senha VARCHAR(100) NOT NULL
+)
+
+CREATE TABLE Evento(
+	IdEvento INT PRIMARY KEY IDENTITY,
+	IdTipoDeEvento INT FOREIGN KEY REFERENCES TipoDeEvento(IdTipoDeEvento) NOT NULL,
+	IdInstituicao INT FOREIGN KEY REFERENCES Instituicao(IdInstituicao) NOT NULL,
+	NomeEvento VARCHAR(40) NOT NULL,
+	Descricao VARCHAR(150) NOT NULL,
+	DataEvento DATE NOT NULL,
+	TimeEvento TIME NOT NULL
+)
+
+CREATE TABLE PresencaEvento(
+	IdPresencaEvento INT PRIMARY KEY IDENTITY,
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario) NOT NULL,
+	IdEvento INT FOREIGN KEY REFERENCES Evento(IdEvento) NOT NULL,
+	Situacao BIT DEFAULT(0)
+)
+
+CREATE TABLE Comentario(
+	IdComentarioEvento INT PRIMARY KEY IDENTITY,
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario) NOT NULL,
+	IdEvento INT FOREIGN KEY REFERENCES Evento(IdEvento) NOT NULL,
+	Descricao VARCHAR(256) NOT NULL,
+	Exibe BIT DEFAULT(0)
+)
