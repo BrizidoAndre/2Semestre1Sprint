@@ -56,3 +56,7 @@ LEFT JOIN
 	tb_Medico ON tb_Medico.IdMedico = tb_Consulta.IdMedico
 LEFT JOIN
 	tb_Usuario ON tb_Usuario.IdUsuario = tb_Medico.IdUsuario
+
+SELECT *
+FROM
+EspecialidadeMedica(5)
