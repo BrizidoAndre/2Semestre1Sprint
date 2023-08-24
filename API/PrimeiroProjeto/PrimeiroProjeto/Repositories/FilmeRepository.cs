@@ -3,9 +3,9 @@ using PrimeiroProjeto.Interfaces;
 
 namespace PrimeiroProjeto.Repositories
 {
-    public class FilmeRepository : IFilmesRepository
+    public class FilmeRepository : Interfaces.IFilmesRepository
     {
-        private string StringConexao = "Data Source = NOTE07-S15; Initial Catalog = Filmes; User Id = sa; Pwd = Senai@134; TrustServerCertificate = true"
+        private string StringConexao = "Data Source = NOTE07-S15; Initial Catalog = Filmes; User Id = sa; pwd = Senai@134; TrustServerCertificate = true";
         public void AtualizarIdCorpo(FilmeDomain Filme)
         {
             throw new NotImplementedException();
