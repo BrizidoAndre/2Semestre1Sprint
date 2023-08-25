@@ -38,29 +38,54 @@ namespace PrimeiroProjeto.Repositories
         /// <param name="novoGenero">Objeto com as informações que serão cadastradas</param>
         public void Cadastrar(GeneroDomain novoGenero)
         {
-            //DEclara a conxão passando a string de conexão como parâmetro
+            //Declara a conexão passando a string de conexão como parâmetro
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 //Declara a query que será executada
-                string queryInsert = $"INSERT INTO Genero(Nome) VALUES('{novoGenero.Nome}')";
+                string queryInsert = "INSERT INTO Genero(Nome) VALUES (@Nome)";
 
-                //Abertura da conexão com o banco de dados
-                con.Open();
 
                 //Declara o SqlCommand passando a query que será executada e a conexão com o bd
                 using (SqlCommand cmd = new SqlCommand(queryInsert, con))
                 {
+                    //Passa o valor do parâmetro @Nome e liga ele ao nome do objeto
+                    cmd.Parameters.AddWithValue("@Nome", novoGenero.Nome);
+
+                    //Abertura da conexão com o banco de dados
+                    con.Open();
+
                     //Executar a query (queryInsert)
-                    cmd.ExecuteReader();
+                    cmd.ExecuteNonQuery();
 
                 }
             }
         }
 
+        /// <summary>
+        /// Método para deletar o objeto
+        /// </summary>
+        /// <param name="IdGenero">Através do Id, poderemos identificar qual método vamos deletar da tabela gênero</param>
         public void Deletar(int IdGenero)
         {
-            throw new NotImplementedException();
+            //Declarando a conexão do banco com a string
+            using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                //Declarando o comando que deletará o id selecionado
+                string queryDelete = "DELETE FROM Genero WHERE IdGenero = @IdDeletado";
+
+
+                using (SqlCommand cmd = new SqlCommand(queryDelete, con))
+                {
+                    cmd.Parameters.AddWithValue("@IdDeletado", IdGenero);
+
+                    con.Open();
+
+                    //Executar a query (queryDelete)
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
+
         /// <summary>
         /// Listar todos os objetos generos
         /// </summary>

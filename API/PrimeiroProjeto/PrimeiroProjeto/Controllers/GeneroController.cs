@@ -79,5 +79,26 @@ namespace PrimeiroProjeto.Controllers
                 return BadRequest(erro.Message);
             }
         }
+
+        /// <summary>
+        /// Método para deletar o elemento do banco de dados
+        /// </summary>
+        /// <param name="IdGenero">Parâmetro que busca o id a ser deletado</param>
+        /// <returns>Retorna a conclusão do delete</returns>
+        [HttpDelete]
+        public IActionResult Delete(int IdGenero)
+        {
+            try
+            {
+                _generoRepository.Deletar(IdGenero);
+
+                return StatusCode(204);
+            }
+            catch (Exception erro)
+            {
+                //Retorna um status code BadRequest(400) e a mensagem do erro
+                return BadRequest(erro.Message);
+            }
+        }
     }
 }

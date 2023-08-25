@@ -36,3 +36,5 @@ C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\API\PrimeiroProjeto\Pr
 C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\API\PrimeiroProjeto\PrimeiroProjeto\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\API\PrimeiroProjeto\PrimeiroProjeto\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\API\PrimeiroProjeto\PrimeiroProjeto\obj\Debug\net7.0\PrimeiroProjeto.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\API\PrimeiroProjeto\PrimeiroProjeto\bin\Debug\net7.0\PrimeiroProjeto.xml
+C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\API\PrimeiroProjeto\PrimeiroProjeto\obj\Debug\net7.0\PrimeiroProjeto.xml

@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PrimeiroProjeto</name>
+    </assembly>
+    <members>
+        <member name="P:PrimeiroProjeto.Controllers.GeneroController._generoRepository">
+            <summary>
+            Objeto _heneroRepository qye irá receber todos os métodos definidos na interface IGeneroRepository
+            </summary>
+        </member>
+        <member name="M:PrimeiroProjeto.Controllers.GeneroController.#ctor">
+            <summary>
+            Instancia o objeto _generoRepository para que haja referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:PrimeiroProjeto.Controllers.GeneroController.Get">
+            <summary>
+            Endpoint que aciona o método ListarTodos no repositório e retorna a resposta para o usuário(front-end)
+            </summary>
+            <returns> Resposta para o usuário(front-end)</returns>
+        </member>
+        <member name="M:PrimeiroProjeto.Controllers.GeneroController.Post(PrimeiroProjeto.Domains.GeneroDomain)">
+            <summary>
+            Endpoint que aciona método de cadastro de gênero
+            </summary>
+            <param name="novoGenero">Objeto recebido na requisição</param>
+            <returns>status code 201 (created)</returns>
+        </member>
+        <member name="M:PrimeiroProjeto.Controllers.GeneroController.Delete(System.Int32)">
+            <summary>
+            Método para deletar o elemento do banco de dados
+            </summary>
+            <param name="IdGenero">Parâmetro que busca o id a ser deletado</param>
+            <returns>Retorna a conclusão do delete</returns>
+        </member>
+        <member name="T:PrimeiroProjeto.Domains.GeneroDomain">
+            <summary>
+            Classe que representa a entidade(tabela) gênero
+            </summary>
+        </member>
+        <member name="T:PrimeiroProjeto.Interfaces.IGeneroRepository">
+            <summary>
+            Interface responsável pelo repositório GeneroRepository
+            Definir os métodos que serão implementados pelo GeneroRepository
+            </summary>
+        </member>
+        <member name="M:PrimeiroProjeto.Interfaces.IGeneroRepository.Cadastrar(PrimeiroProjeto.Domains.GeneroDomain)">
+            <summary>
+            Cadastrar um novo gênero
+            </summary>
+            <param name="novoGenero">Objeto que será cadastrado</param>
+        </member>
+        <member name="M:PrimeiroProjeto.Interfaces.IGeneroRepository.ListarTodos">
+            <summary>
+            Listar todos os objets cadastrados
+            </summary>
+            <returns>Lista com os objetos</returns>
+        </member>
+        <member name="M:PrimeiroProjeto.Interfaces.IGeneroRepository.AtualizarIdCorpo(PrimeiroProjeto.Domains.GeneroDomain)">
+            <summary>
+            Atualizar objeto existente passando o seu idpelocorpoda requisição
+            </summary>
+            <param name="genero">Objeto atualizado</param>
+        </member>
+        <member name="M:PrimeiroProjeto.Interfaces.IGeneroRepository.AtualizarIdUrl(System.Int32,PrimeiroProjeto.Domains.GeneroDomain)">
+            <summary>
+            Atualizar objeto existente passando o seu id pela url
+            </summary>
+            <param name="id">Id do objeto que será atualizado</param>
+            <param name="genero">Objeto atualizado (novas informações)</param>
+        </member>
+        <member name="M:PrimeiroProjeto.Interfaces.IGeneroRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta o objeto
+            </summary>
+            <param name="IdGenero">Id do objeto que será deletado</param>
+        </member>
+        <member name="M:PrimeiroProjeto.Interfaces.IGeneroRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um objeto através do seu id
+            </summary>
+            <param name="id">Id do objeto a ser buscado</param>
+            <returns>O objeto buscado</returns>
+        </member>
+        <member name="F:PrimeiroProjeto.Repositories.GeneroRepository.stringConexao">
+            <summary>
+             String de conexão com o banco de dados que recebe os seguintes parãmetros:
+             Data Source : Nome do servidor
+             Initia Catalog : Nome do banco de dados
+             Autenticação:
+                -Windows : Integrated Security = true
+                -SQLServer: User Id = sa; Pwd = Senhadoservidor
+                
+            </summary>
+        </member>
+        <member name="M:PrimeiroProjeto.Repositories.GeneroRepository.Cadastrar(PrimeiroProjeto.Domains.GeneroDomain)">
+            <summary>
+            Cadastrar um novo gênero
+            </summary>
+            <param name="novoGenero">Objeto com as informações que serão cadastradas</param>
+        </member>
+        <member name="M:PrimeiroProjeto.Repositories.GeneroRepository.Deletar(System.Int32)">
+            <summary>
+            Método para deletar o objeto
+            </summary>
+            <param name="IdGenero">Através do Id, poderemos identificar qual método vamos deletar da tabela gênero</param>
+        </member>
+        <member name="M:PrimeiroProjeto.Repositories.GeneroRepository.ListarTodos">
+            <summary>
+            Listar todos os objetos generos
+            </summary>
+            <returns>Lista de objetos (gêneros) </returns>
+        </member>
+    </members>
+</doc>
