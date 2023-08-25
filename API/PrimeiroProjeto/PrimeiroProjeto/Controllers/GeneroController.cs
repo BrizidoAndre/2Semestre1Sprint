@@ -85,7 +85,7 @@ namespace PrimeiroProjeto.Controllers
         /// </summary>
         /// <param name="IdGenero">Parâmetro que busca o id a ser deletado</param>
         /// <returns>Retorna a conclusão do delete</returns>
-        [HttpDelete]
+        [HttpDelete ("{idGenero}")]
         public IActionResult Delete(int IdGenero)
         {
             try
