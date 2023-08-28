@@ -57,6 +57,49 @@ namespace PrimeiroProjeto.Controllers
             }
         }
 
+        //[HttpGet("{IdGenero}")]
+        //public IActionResult Get(int IdGenero)
+        //{
+        //    try
+        //    {
+        //        GeneroDomain generoBuscado = _generoRepository.BuscarPorId(IdGenero);
+
+        //        return Ok(generoBuscado);
+        //    }
+        //    catch (Exception erro)
+        //    {
+
+        //        return BadRequest(erro.Message);
+        //    }
+        //}
+
+        /// <summary>
+        /// Método que encontra o objeto através do Id
+        /// </summary>
+        /// <param name="IdGenero">O Id que nos retornará o objeto</param>
+        /// <returns>O objeto buscado</returns>
+        [HttpGet("{IdGenero}")]
+        public IActionResult GetWithId(int IdGenero)
+        {
+            try
+            {
+                GeneroRepository _genero = new GeneroRepository();
+                GeneroDomain generoBuscado = _genero.AcharPeloId(IdGenero);
+
+                if (generoBuscado == null)
+                {
+                    return NotFound("Nenhum gênero foi encontrado!");
+                }
+
+                return Ok(generoBuscado);
+            }
+            catch (Exception erro)
+            {
+
+                return BadRequest(erro.Message);
+            }
+        }
+
         /// <summary>
         /// Endpoint que aciona método de cadastro de gênero
         /// </summary>
@@ -85,7 +128,7 @@ namespace PrimeiroProjeto.Controllers
         /// </summary>
         /// <param name="IdGenero">Parâmetro que busca o id a ser deletado</param>
         /// <returns>Retorna a conclusão do delete</returns>
-        [HttpDelete ("{idGenero}")]
+        [HttpDelete("{IdGenero}")]
         public IActionResult Delete(int IdGenero)
         {
             try
@@ -97,6 +140,43 @@ namespace PrimeiroProjeto.Controllers
             catch (Exception erro)
             {
                 //Retorna um status code BadRequest(400) e a mensagem do erro
+                return BadRequest(erro.Message);
+            }
+        }
+
+        /// <summary>
+        /// Método para atualizar o objeto modificando o corpo em si
+        /// </summary>
+        /// <param name="genero"></param>
+        /// <returns></returns>
+        [HttpPut]
+        public IActionResult Put(GeneroDomain genero)
+        {
+            try
+            {
+                _generoRepository.AtualizarIdCorpo(genero);
+                return StatusCode(204);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro.Message);
+            }
+        }
+
+        [HttpPatch("{IdGenero}")]
+        public IActionResult Patch(int IdGenero, GeneroDomain generoNovo)
+        {
+            try
+            {
+                GeneroRepository _genero = new GeneroRepository();
+                generoNovo = _genero.AcharPeloId(IdGenero);
+                _generoRepository.AtualizarIdUrl(IdGenero, generoNovo);
+
+                return StatusCode(204);
+
+            }
+            catch (Exception erro)
+            {
                 return BadRequest(erro.Message);
             }
         }

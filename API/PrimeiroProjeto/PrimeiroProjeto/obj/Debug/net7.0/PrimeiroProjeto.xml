@@ -20,6 +20,13 @@
             </summary>
             <returns> Resposta para o usuário(front-end)</returns>
         </member>
+        <member name="M:PrimeiroProjeto.Controllers.GeneroController.GetWithId(System.Int32)">
+            <summary>
+            Método que encontra o objeto através do Id
+            </summary>
+            <param name="IdGenero">O Id que nos retornará o objeto</param>
+            <returns>O objeto buscado</returns>
+        </member>
         <member name="M:PrimeiroProjeto.Controllers.GeneroController.Post(PrimeiroProjeto.Domains.GeneroDomain)">
             <summary>
             Endpoint que aciona método de cadastro de gênero
@@ -33,6 +40,13 @@
             </summary>
             <param name="IdGenero">Parâmetro que busca o id a ser deletado</param>
             <returns>Retorna a conclusão do delete</returns>
+        </member>
+        <member name="M:PrimeiroProjeto.Controllers.GeneroController.Put(PrimeiroProjeto.Domains.GeneroDomain)">
+            <summary>
+            Método para atualizar o objeto modificando o corpo em si
+            </summary>
+            <param name="genero"></param>
+            <returns></returns>
         </member>
         <member name="T:PrimeiroProjeto.Domains.GeneroDomain">
             <summary>
@@ -105,6 +119,12 @@
             Método para deletar o objeto
             </summary>
             <param name="IdGenero">Através do Id, poderemos identificar qual método vamos deletar da tabela gênero</param>
+        </member>
+        <member name="M:PrimeiroProjeto.Repositories.GeneroRepository.AtualizarIdCorpo(PrimeiroProjeto.Domains.GeneroDomain)">
+            <summary>
+            Método para atualizar o objeto com base no corpo digitado
+            </summary>
+            <param name="genero">O objeto que será usado para encontrar e modificar da lista</param>
         </member>
         <member name="M:PrimeiroProjeto.Repositories.GeneroRepository.ListarTodos">
             <summary>
