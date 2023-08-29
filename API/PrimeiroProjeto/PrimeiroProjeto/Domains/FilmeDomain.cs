@@ -4,6 +4,11 @@ namespace PrimeiroProjeto.Domains
 {
     public class FilmeDomain
     {
+        public FilmeDomain()
+        {
+
+        }
+
         public int IdFilme { get; set; }
         public int IdGenero { get; set; }
 

@@ -10,7 +10,7 @@ namespace PrimeiroProjeto.Controllers
     //Domínio/API/nomeController
     //Ex: http://localhost:5000/api/GeneroController
     [Route("api/[controller]")]
-
+    
     //Define que é um controlador de API
     [ApiController]
 
@@ -163,14 +163,12 @@ namespace PrimeiroProjeto.Controllers
             }
         }
 
-        [HttpPatch("{IdGenero}")]
-        public IActionResult Patch(int IdGenero, GeneroDomain generoNovo)
+        [HttpPut("{IdGenero}")]
+        public IActionResult Put(int IdGenero, GeneroDomain generoNovo)
         {
             try
             {
-                GeneroRepository _genero = new GeneroRepository();
-                generoNovo = _genero.AcharPeloId(IdGenero);
-                _generoRepository.AtualizarIdUrl(IdGenero, generoNovo);
+                 _generoRepository.AtualizarIdUrl(IdGenero, generoNovo);
 
                 return StatusCode(204);
 
