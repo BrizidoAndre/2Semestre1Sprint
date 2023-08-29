@@ -162,7 +162,12 @@ namespace PrimeiroProjeto.Controllers
                 return BadRequest(erro.Message);
             }
         }
-
+        /// <summary>
+        /// Método para pesquisar o id do gênero e então modificar o corpo
+        /// </summary>
+        /// <param name="IdGenero">O id do genero a ser buscado</param>
+        /// <param name="generoNovo">O objeto que será alterado</param>
+        /// <returns></returns>
         [HttpPut("{IdGenero}")]
         public IActionResult Put(int IdGenero, GeneroDomain generoNovo)
         {

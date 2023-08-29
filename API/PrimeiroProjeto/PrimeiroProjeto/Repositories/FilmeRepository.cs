@@ -7,20 +7,73 @@ namespace PrimeiroProjeto.Repositories
 {
     public class FilmeRepository : Interfaces.IFilmesRepository
     {
-        private string StringConexao = "Data Source = NOTE07-S15; Initial Catalog = Filmes; User Id = sa; pwd = Senai@134; TrustServerCertificate = true";
+        private string StringConexao = "Data Source = DESKTOP-VLQ1I1C; Initial Catalog = Filmes; User Id = sa; pwd = Senai@134; TrustServerCertificate = true";
         public void AtualizarIdCorpo(FilmeDomain Filme)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string stringUpdate = "UPDATE Filme SET  Titulo = @filmeNome, IdGenero = @filmeGenero WHERE IdFilme = @idFilme";
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(stringUpdate, con))
+                {
+                    cmd.Parameters.AddWithValue("@filmeNome", Filme.Titulo);
+                    cmd.Parameters.AddWithValue("@filmeGenero", Filme.IdGenero);
+                    cmd.Parameters.AddWithValue("@idFilme", Filme.IdFilme);
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
         }
 
         public void AtualizarIdUrl(int id, FilmeDomain Filme)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection())
+            {
+                string stringUpdateUrl = "UPDATE Filme SET  Titulo = @filmeNome, IdGenero = @filmeGenero WHERE IdFilme = @idFilme";
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(stringUpdateUrl,con))
+                {
+                    cmd.Parameters.AddWithValue("@filmeNome",Filme.Titulo);
+                }
+            }
+            
         }
 
         public FilmeDomain BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string stringBuscarId = "SELECT Genero.Nome, Filme.Titulo, Filme.IdFilme, Filme.IdGenero FROM Filme LEFT JOIN Genero ON Genero.IdGenero = Filme.IdGenero WHERE IdFilme = @idFilme";
+                using (SqlCommand cmd = new SqlCommand(stringBuscarId, con))
+                {
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@idFilme", id);
+
+                    SqlDataReader rdr;
+
+                    rdr = cmd.ExecuteReader();
+
+                    if (rdr.Read())
+                    {
+                        FilmeDomain filme = new FilmeDomain()
+                        {
+                            IdFilme = Convert.ToInt32(rdr["IdFilme"]),
+                            IdGenero = Convert.ToInt32(rdr["IdGenero"]),
+                            Titulo = rdr["Titulo"].ToString(),
+                            Genero = new GeneroDomain
+                            {
+                                Nome = rdr["Nome"].ToString(),
+                                IdGenero = Convert.ToInt32(rdr["IdGenero"])
+                            }
+                        };
+                        return filme;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
         }
 
         public void Cadastrar(FilmeDomain novoFilme)
@@ -28,24 +81,35 @@ namespace PrimeiroProjeto.Repositories
             using (SqlConnection con = new SqlConnection(StringConexao))
             {
                 string stringPost = "INSERT INTO Filme(IdGenero,Titulo) VALUES(@idGenero,@filmeTitulo)";
+                con.Open();
 
-                using (SqlCommand cmd = new SqlCommand(stringPost,con))
+                using (SqlCommand cmd = new SqlCommand(stringPost, con))
                 {
                     cmd.Parameters.AddWithValue("idGenero", novoFilme.IdGenero);
                     cmd.Parameters.AddWithValue("@filmeTitulo", novoFilme.Titulo);
 
-                    con.Open();
 
                     cmd.ExecuteNonQuery();
                 }
             }
 
-            
+
         }
 
         public void Deletar(int IdFilme)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string stringDelete = "DELETE FROM Filme WHERE IdFilme = @idFilme";
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(stringDelete, con))
+                {
+                    cmd.Parameters.AddWithValue("@idFilme", IdFilme);
+
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         public List<FilmeDomain> ListarFilme()

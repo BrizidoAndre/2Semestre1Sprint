@@ -18,7 +18,10 @@ namespace PrimeiroProjeto.Controllers
         {
             _filmeRepository = new FilmeRepository();
         }
-
+        /// <summary>
+        /// Método de listagem dos Filmes
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -34,6 +37,42 @@ namespace PrimeiroProjeto.Controllers
 
         }
 
+        /// <summary>
+        /// Método de Postagem de novos Filmes
+        /// </summary>
+        /// <param name="novofilme"></param>
+        /// <returns></returns>
+        /// <summary>
+        /// Método para pesquisa de um filme específico
+        /// </summary>
+        /// <param name="idFilme"></param>
+        /// <returns></returns>
+        [HttpGet("{idFilme}")]
+        public IActionResult GetWithId(int idFilme)
+        {
+            try
+            {
+                if (_filmeRepository.BuscarPorId(idFilme) == null)
+                {
+                    return NotFound("Objeto não encontrado!");
+                }
+                else
+                {
+                    return Ok(_filmeRepository.BuscarPorId(idFilme));
+                }
+
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro.Message);
+            }
+        }
+
+        /// <summary>
+        /// Método de cadastro de novos filmes
+        /// </summary>
+        /// <param name="novofilme"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(FilmeDomain novofilme)
         {
@@ -50,6 +89,42 @@ namespace PrimeiroProjeto.Controllers
                 }
             
         }
+
+        /// <summary>
+        /// Método de Deleção de filmes da lista
+        /// </summary>
+        /// <param name="idFilme"></param>
+        /// <returns></returns>
+        [HttpDelete("{idFilme}")]
+        public IActionResult Delete(int idFilme)
+        {
+            try
+            {
+                _filmeRepository.Deletar(idFilme);
+
+                return StatusCode(204);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro.Message);
+            }
+        }
+
+        [HttpPut]
+        public IActionResult PutBody(FilmeDomain novofilme)
+        {
+            try
+            {
+                _filmeRepository.AtualizarIdCorpo(novofilme);
+
+                return StatusCode(204);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro.Message);
+            }
+        }
+
     }
 }
 
