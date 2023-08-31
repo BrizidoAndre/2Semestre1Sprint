@@ -18,7 +18,13 @@ namespace PrimeiroProjeto.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
-        [HttpGet]
+        /// <summary>
+        /// Método para retornar o login do usuário acertando email e senha
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="senha"></param>
+        /// <returns></returns>
+        [HttpPost]
         public IActionResult GetUser(string email, string senha)
         {
             try
@@ -28,7 +34,7 @@ namespace PrimeiroProjeto.Controllers
                 {
                     return Ok(usuario);
                 }
-                return BadRequest("Usuario não encontrado");
+                return BadRequest("Email ou senha incorretos.");
             }
             catch (Exception erro)
             {

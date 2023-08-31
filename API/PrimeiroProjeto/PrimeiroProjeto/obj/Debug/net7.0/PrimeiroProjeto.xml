@@ -12,7 +12,7 @@
         </member>
         <member name="M:PrimeiroProjeto.Controllers.FilmeController.GetWithId(System.Int32)">
             <summary>
-            Método de Postagem de novos Filmes
+            Método para buscar o filme com base no ID
             </summary>
             <param name="novofilme"></param>
             <returns></returns>
@@ -101,6 +101,14 @@
             </summary>
             <param name="IdGenero">O id do genero a ser buscado</param>
             <param name="generoNovo">O objeto que será alterado</param>
+            <returns></returns>
+        </member>
+        <member name="M:PrimeiroProjeto.Controllers.UsuarioController.GetUser(System.String,System.String)">
+            <summary>
+            Método para retornar o login do usuário acertando email e senha
+            </summary>
+            <param name="email"></param>
+            <param name="senha"></param>
             <returns></returns>
         </member>
         <member name="T:PrimeiroProjeto.Domains.GeneroDomain">

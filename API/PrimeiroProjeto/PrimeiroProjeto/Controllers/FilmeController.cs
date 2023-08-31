@@ -38,7 +38,7 @@ namespace PrimeiroProjeto.Controllers
         }
 
         /// <summary>
-        /// Método de Postagem de novos Filmes
+        /// Método para buscar o filme com base no ID
         /// </summary>
         /// <param name="novofilme"></param>
         /// <returns></returns>
