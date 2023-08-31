@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "y6IEV6N6wI5vMHwhN0gyBDmvM1SQkcWmhnAelVK/6ExOfJijE783Usn2ox0Zw/Wt15O78dero7r9oU4I8dM82g==",
+  "dgSpecHash": "xP6Gv/TVOKnA1aO9+XJislUm37yKkMws1oXzCOuFVa8YyvEn33zrlfabulPR4ogqSNGIRobo/slrSCcKK5idcg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\51910007811\\Desktop\\2Semestre1Sprint\\API\\PrimeiroProjeto\\PrimeiroProjeto\\PrimeiroProjeto.csproj",
+  "projectFilePath": "C:\\Users\\51910007811\\Desktop\\2ºSemestre\\2Semestre1Sprint\\API\\PrimeiroProjeto\\PrimeiroProjeto\\PrimeiroProjeto.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\51910007811\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\51910007811\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

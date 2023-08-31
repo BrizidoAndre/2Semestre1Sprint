@@ -901,11 +901,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\51910007811\\Desktop\\2Semestre1Sprint\\API\\PrimeiroProjeto\\PrimeiroProjeto\\PrimeiroProjeto.csproj",
+      "projectUniqueName": "C:\\Users\\51910007811\\Desktop\\2ºSemestre\\2Semestre1Sprint\\API\\PrimeiroProjeto\\PrimeiroProjeto\\PrimeiroProjeto.csproj",
       "projectName": "PrimeiroProjeto",
-      "projectPath": "C:\\Users\\51910007811\\Desktop\\2Semestre1Sprint\\API\\PrimeiroProjeto\\PrimeiroProjeto\\PrimeiroProjeto.csproj",
+      "projectPath": "C:\\Users\\51910007811\\Desktop\\2ºSemestre\\2Semestre1Sprint\\API\\PrimeiroProjeto\\PrimeiroProjeto\\PrimeiroProjeto.csproj",
       "packagesPath": "C:\\Users\\51910007811\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\51910007811\\Desktop\\2Semestre1Sprint\\API\\PrimeiroProjeto\\PrimeiroProjeto\\obj\\",
+      "outputPath": "C:\\Users\\51910007811\\Desktop\\2ºSemestre\\2Semestre1Sprint\\API\\PrimeiroProjeto\\PrimeiroProjeto\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\51910007811\\AppData\\Roaming\\NuGet\\NuGet.Config",

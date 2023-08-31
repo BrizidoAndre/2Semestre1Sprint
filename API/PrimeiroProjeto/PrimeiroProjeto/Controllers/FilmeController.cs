@@ -110,6 +110,11 @@ namespace PrimeiroProjeto.Controllers
             }
         }
 
+        /// <summary>
+        /// Método modificando um corpo para então modificá-lo na lista
+        /// </summary>
+        /// <param name="novofilme"></param>
+        /// <returns></returns>
         [HttpPut]
         public IActionResult PutBody(FilmeDomain novofilme)
         {
@@ -125,6 +130,25 @@ namespace PrimeiroProjeto.Controllers
             }
         }
 
+        /// <summary>
+        /// Método para modificar o filme colocando um Id correspondente
+        /// </summary>
+        /// <param name="idFilme"></param>
+        /// <param name="filme"></param>
+        /// <returns></returns>
+        [HttpPut("{idFilme}")]
+        public IActionResult PutWithId(int idFilme, FilmeDomain filme)
+        {
+            try
+            {
+                _filmeRepository.AtualizarIdUrl(idFilme, filme);
+                return StatusCode(204);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro.Message);
+            }
+        }
     }
 }
 

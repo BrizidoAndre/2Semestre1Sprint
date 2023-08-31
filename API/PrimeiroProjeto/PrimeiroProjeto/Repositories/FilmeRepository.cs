@@ -7,7 +7,7 @@ namespace PrimeiroProjeto.Repositories
 {
     public class FilmeRepository : Interfaces.IFilmesRepository
     {
-        private string StringConexao = "Data Source = DESKTOP-VLQ1I1C; Initial Catalog = Filmes; User Id = sa; pwd = Senai@134; TrustServerCertificate = true";
+        private string StringConexao = "Data Source = NOTE07-S15; Initial Catalog = Filmes; User Id = sa; pwd = Senai@134; TrustServerCertificate = true";
         public void AtualizarIdCorpo(FilmeDomain Filme)
         {
             using (SqlConnection con = new SqlConnection(StringConexao))
@@ -25,15 +25,23 @@ namespace PrimeiroProjeto.Repositories
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="Filme"></param>
         public void AtualizarIdUrl(int id, FilmeDomain Filme)
         {
-            using (SqlConnection con = new SqlConnection())
+            using (SqlConnection con = new SqlConnection(StringConexao))
             {
                 string stringUpdateUrl = "UPDATE Filme SET  Titulo = @filmeNome, IdGenero = @filmeGenero WHERE IdFilme = @idFilme";
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand(stringUpdateUrl,con))
                 {
                     cmd.Parameters.AddWithValue("@filmeNome",Filme.Titulo);
+                    cmd.Parameters.AddWithValue("@filmeGenero", Filme.IdGenero);
+                    cmd.Parameters.AddWithValue("@idFilme", id);
+                    cmd.ExecuteNonQuery();
                 }
             }
             

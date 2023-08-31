@@ -10,7 +10,7 @@ namespace PrimeiroProjeto.Controllers
     //Domínio/API/nomeController
     //Ex: http://localhost:5000/api/GeneroController
     [Route("api/[controller]")]
-    
+
     //Define que é um controlador de API
     [ApiController]
 
@@ -111,10 +111,17 @@ namespace PrimeiroProjeto.Controllers
             try
             {
                 //Fazendo ao chamada para o método cadastrar passando o objeto como parâmetro
-                _generoRepository.Cadastrar(novoGenero);
+                if (novoGenero.Nome == null || novoGenero.Nome == "string")
+                {
+                    return NotFound("É necessário colocar um nome");
+                }
+                else
+                {
+                    _generoRepository.Cadastrar(novoGenero);
+                    return StatusCode(201);
+                }
 
                 //Retorna oum status code 201 - Created
-                return StatusCode(201);
             }
             catch (Exception erro)
             {
@@ -133,6 +140,10 @@ namespace PrimeiroProjeto.Controllers
         {
             try
             {
+                if (IdGenero == 0)
+                {
+                    return NotFound("Um id deve ser colocado!");
+                }
                 _generoRepository.Deletar(IdGenero);
 
                 return StatusCode(204);
@@ -173,7 +184,7 @@ namespace PrimeiroProjeto.Controllers
         {
             try
             {
-                 _generoRepository.AtualizarIdUrl(IdGenero, generoNovo);
+                _generoRepository.AtualizarIdUrl(IdGenero, generoNovo);
 
                 return StatusCode(204);
 

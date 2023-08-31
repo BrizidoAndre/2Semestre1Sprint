@@ -36,6 +36,21 @@
             <param name="idFilme"></param>
             <returns></returns>
         </member>
+        <member name="M:PrimeiroProjeto.Controllers.FilmeController.PutBody(PrimeiroProjeto.Domains.FilmeDomain)">
+            <summary>
+            Método modificando um corpo para então modificá-lo na lista
+            </summary>
+            <param name="novofilme"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PrimeiroProjeto.Controllers.FilmeController.PutWithId(System.Int32,PrimeiroProjeto.Domains.FilmeDomain)">
+            <summary>
+            Método para modificar o filme colocando um Id correspondente
+            </summary>
+            <param name="idFilme"></param>
+            <param name="filme"></param>
+            <returns></returns>
+        </member>
         <member name="P:PrimeiroProjeto.Controllers.GeneroController._generoRepository">
             <summary>
             Objeto _heneroRepository qye irá receber todos os métodos definidos na interface IGeneroRepository
@@ -136,6 +151,13 @@
             </summary>
             <param name="id">Id do objeto a ser buscado</param>
             <returns>O objeto buscado</returns>
+        </member>
+        <member name="M:PrimeiroProjeto.Repositories.FilmeRepository.AtualizarIdUrl(System.Int32,PrimeiroProjeto.Domains.FilmeDomain)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="Filme"></param>
         </member>
         <member name="F:PrimeiroProjeto.Repositories.GeneroRepository.stringConexao">
             <summary>

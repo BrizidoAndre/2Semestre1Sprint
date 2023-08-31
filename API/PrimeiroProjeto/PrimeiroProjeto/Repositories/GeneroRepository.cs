@@ -16,7 +16,7 @@ namespace PrimeiroProjeto.Repositories
         ///     -SQLServer: User Id = sa; Pwd = Senhadoservidor
         ///     
         /// </summary>
-        private string stringConexao = "Data Source = DESKTOP-VLQ1I1C; Initial Catalog = Filmes;  User Id = sa;pwd = Senai@134; TrustServerCertificate = true";
+        private string stringConexao = "Data Source = NOTE07-S15; Initial Catalog = Filmes;  User Id = sa;pwd = Senai@134; TrustServerCertificate = true";
 
 
 
