@@ -103,7 +103,7 @@
             <param name="generoNovo">O objeto que será alterado</param>
             <returns></returns>
         </member>
-        <member name="M:PrimeiroProjeto.Controllers.UsuarioController.GetUser(System.String,System.String)">
+        <member name="M:PrimeiroProjeto.Controllers.UsuarioController.GetUser(PrimeiroProjeto.Domains.UsuarioDomain)">
             <summary>
             Método para retornar o login do usuário acertando email e senha
             </summary>

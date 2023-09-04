@@ -26,13 +26,13 @@ namespace PrimeiroProjeto.Repositories
 
                     if (rdr.Read())
                     {
-                        UsuarioDomain usuario = new UsuarioDomain()
+                        UsuarioDomain usuariobusca = new UsuarioDomain()
                         {
                             Email = rdr["Email"].ToString(),
                             Senha = rdr["Senha"].ToString(),
-                            Permissao = Convert.ToBoolean(rdr["Permissao"])
+                            Permissao = rdr["Permissao"].ToString()
                         };
-                            return usuario;
+                            return usuariobusca;
                     }
                     return null;
                 }
