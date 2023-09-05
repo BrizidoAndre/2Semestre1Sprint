@@ -78,3 +78,11 @@ C:\Users\51910007811\Desktop\2Semestre1Sprint\API\PrimeiroProjeto\PrimeiroProjet
 C:\Users\51910007811\Desktop\2Semestre1Sprint\API\PrimeiroProjeto\PrimeiroProjeto\obj\Debug\net7.0\PrimeiroProjeto.pdb
 C:\Users\51910007811\Desktop\2Semestre1Sprint\API\PrimeiroProjeto\PrimeiroProjeto\obj\Debug\net7.0\PrimeiroProjeto.genruntimeconfig.cache
 C:\Users\51910007811\Desktop\2Semestre1Sprint\API\PrimeiroProjeto\PrimeiroProjeto\obj\Debug\net7.0\ref\PrimeiroProjeto.dll
+C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\API\PrimeiroProjeto\PrimeiroProjeto\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\API\PrimeiroProjeto\PrimeiroProjeto\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\API\PrimeiroProjeto\PrimeiroProjeto\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\API\PrimeiroProjeto\PrimeiroProjeto\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\API\PrimeiroProjeto\PrimeiroProjeto\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\API\PrimeiroProjeto\PrimeiroProjeto\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\API\PrimeiroProjeto\PrimeiroProjeto\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\API\PrimeiroProjeto\PrimeiroProjeto\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll

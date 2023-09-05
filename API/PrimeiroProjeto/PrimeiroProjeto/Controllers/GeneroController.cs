@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PrimeiroProjeto.Domains;
 using PrimeiroProjeto.Interfaces;
@@ -16,6 +17,7 @@ namespace PrimeiroProjeto.Controllers
 
     //Define que o tipo de resposta da API será no formato JSON
     [Produces("application/json")]
+    //Este autorize serve paraidentificar quais usuarios tem acesso ao método
 
     //Método controlador que herda da controller base
     //Onde será criado os Endpoint (rotas)
@@ -39,6 +41,11 @@ namespace PrimeiroProjeto.Controllers
         /// </summary>
         /// <returns> Resposta para o usuário(front-end)</returns>
         [HttpGet]
+        //MUITA ATENÇÃO AQUI O MÉTODO SÓ PODE SER PROTEGIDO ATRAVÉS DESSE COMANDO
+        //USANDO O AUTHORIZED Roles vc consegue determinar quais valores (que dentro dele devem ser string) podem realizar o método
+        //relembrando que meu Roles está diretamente ligado com a minha coluna permissão dentro da tabela de dados e por ser um valor bit
+        //só existem dois valores possíveis. Caso a coluna fosse string eu precisaria digitar exatamente como está na database
+        [Authorize(Roles = "True, False")]
         public IActionResult Get()
         {
             try
@@ -79,6 +86,7 @@ namespace PrimeiroProjeto.Controllers
         /// <param name="IdGenero">O Id que nos retornará o objeto</param>
         /// <returns>O objeto buscado</returns>
         [HttpGet("{IdGenero}")]
+        [Authorize(Roles = "True, False")]
         public IActionResult GetWithId(int IdGenero)
         {
             try
@@ -106,6 +114,7 @@ namespace PrimeiroProjeto.Controllers
         /// <param name="novoGenero">Objeto recebido na requisição</param>
         /// <returns>status code 201 (created)</returns>
         [HttpPost]
+        [Authorize(Roles = "True")]
         public IActionResult Post(GeneroDomain novoGenero)
         {
             try
@@ -136,6 +145,7 @@ namespace PrimeiroProjeto.Controllers
         /// <param name="IdGenero">Parâmetro que busca o id a ser deletado</param>
         /// <returns>Retorna a conclusão do delete</returns>
         [HttpDelete("{IdGenero}")]
+        [Authorize(Roles = "True")]
         public IActionResult Delete(int IdGenero)
         {
             try
@@ -161,6 +171,7 @@ namespace PrimeiroProjeto.Controllers
         /// <param name="genero"></param>
         /// <returns></returns>
         [HttpPut]
+        [Authorize(Roles = "True")]
         public IActionResult Put(GeneroDomain genero)
         {
             try
@@ -180,6 +191,7 @@ namespace PrimeiroProjeto.Controllers
         /// <param name="generoNovo">O objeto que será alterado</param>
         /// <returns></returns>
         [HttpPut("{IdGenero}")]
+        [Authorize(Roles = "True")]
         public IActionResult Put(int IdGenero, GeneroDomain generoNovo)
         {
             try

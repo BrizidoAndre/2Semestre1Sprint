@@ -43,7 +43,7 @@ namespace PrimeiroProjeto.Controllers
                     //Formato da claim
                     new Claim(JwtRegisteredClaimNames.Jti,usuarioBusca.IdUsuario.ToString()),
                     new Claim(JwtRegisteredClaimNames.Email,usuarioBusca.Email),
-                    new Claim(ClaimTypes.Role,usuarioBusca.Permissao),
+                    new Claim(ClaimTypes.Role,usuarioBusca.Permissao.ToString()),
 
                     //existe a possibilidade de criar uma claim personalizada
                     new Claim("Claim Personalizada","Valor da Claim Personalizada")

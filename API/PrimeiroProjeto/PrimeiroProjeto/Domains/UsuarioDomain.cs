@@ -13,7 +13,7 @@ namespace PrimeiroProjeto.Domains
         public string Senha { get; set; }
 
         [Required(ErrorMessage ="Você não se identificou como usuário")]
-        public string Permissao { get; set; }
+        public bool Permissao { get; set; }
         //A permissão é um falor booleano. Para resumir se o valor é false, o usuário tem acesso comum, se o valor é true, ele tem acesso ilimitado.
 
         public int IdUsuario { get; set; }

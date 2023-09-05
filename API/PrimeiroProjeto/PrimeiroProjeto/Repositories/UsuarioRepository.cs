@@ -30,7 +30,7 @@ namespace PrimeiroProjeto.Repositories
                         {
                             Email = rdr["Email"].ToString(),
                             Senha = rdr["Senha"].ToString(),
-                            Permissao = rdr["Permissao"].ToString()
+                            Permissao = Convert.ToBoolean(rdr["Permissao"])
                         };
                             return usuariobusca;
                     }
