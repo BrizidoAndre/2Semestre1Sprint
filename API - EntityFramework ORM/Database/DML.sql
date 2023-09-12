@@ -1,0 +1,30 @@
+USE inlock_games_dbFirst_manha
+
+INSERT INTO Estudio
+VALUES 
+	(NEWID(),'Blizzard'),
+	(NEWID(),'SESI'),
+	(NEWID(),'SEBRAE')
+
+SELECT * FROM Estudio
+
+INSERT INTO Jogo
+VALUES 
+	(NEWID(), 'ACA046CA-02BF-4CCD-B9C4-037DFACABD65', 'PING PONG', 'JOGO LEGAL', '2023-01-01', 500),
+	(NEWID(), 'ACA046CA-02BF-4CCD-B9C4-037DFACABD65', 'JUCAMOM', 'CAÇA POKEMON', '2023-03-23', 2.99)
+
+SELECT * FROM Jogo
+
+INSERT INTO TiposUsuario
+VALUES 
+	(NEWID(), 'Administrador'),
+	(NEWID(), 'Comum')
+
+SELECT * FROM TiposUsuario
+
+INSERT INTO Usuario
+VALUES
+	(NEWID(), '89403B0C-1D77-4FA1-BB6F-5E67E5D06773','adm@adm.com','admin'),
+	(NEWID(), '180E78F6-25B7-45A6-B971-3E71B539B208','comum@comum.com','comum')
+
+SELECT * FROM Usuario
