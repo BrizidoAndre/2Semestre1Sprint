@@ -16,7 +16,7 @@ namespace senai.inlock.webApi.Repositories
             return datacerta;
         }
 
-        public string StringConexao = "Data Source = NOTE07-S15; Initial Catalog = inlock_games; User Id = sa; pwd = Senai@134; TrustServerCertificate = true";
+        public string StringConexao = "Data Source = NOTE07-S15; Initial Catalog = Filmes; User Id = sa;pwd = Senai@134; TrustServerCertificate = true";
 
         public void Cadastrar(JogosDomain _jogocadastrado)
         {

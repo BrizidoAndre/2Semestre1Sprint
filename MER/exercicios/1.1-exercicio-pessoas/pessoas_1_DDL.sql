@@ -1,7 +1,7 @@
 --ATIVIDADE DA AULA 5 - DDL
 --Criando a database
 CREATE DATABASE Exercicio_1_1;
-
+GO
 --Usando a database criada
 USE Exercicio_1_1
 
@@ -24,4 +24,5 @@ CREATE TABLE Telefone(
 	IdPessoa INT FOREIGN KEY REFERENCES Pessoa(IdPessoa) NOT NULL,
 	Numero VARCHAR (30) NOT NULL
 )
+
 

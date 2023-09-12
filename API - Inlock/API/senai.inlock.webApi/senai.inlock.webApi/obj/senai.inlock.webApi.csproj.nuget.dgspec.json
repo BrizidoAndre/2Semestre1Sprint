@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\51910007811\\Desktop\\2ºSemestre\\2Semestre1Sprint\\API - Inlock\\API\\senai.inlock.webApi\\senai.inlock.webApi\\senai.inlock.webApi.csproj": {}
+    "C:\\Users\\Basilios\\Desktop\\Ex2ºSemestre\\2Semestre1Sprint\\API - Inlock\\API\\senai.inlock.webApi\\senai.inlock.webApi\\senai.inlock.webApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\51910007811\\Desktop\\2ºSemestre\\2Semestre1Sprint\\API - Inlock\\API\\senai.inlock.webApi\\senai.inlock.webApi\\senai.inlock.webApi.csproj": {
+    "C:\\Users\\Basilios\\Desktop\\Ex2ºSemestre\\2Semestre1Sprint\\API - Inlock\\API\\senai.inlock.webApi\\senai.inlock.webApi\\senai.inlock.webApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\51910007811\\Desktop\\2ºSemestre\\2Semestre1Sprint\\API - Inlock\\API\\senai.inlock.webApi\\senai.inlock.webApi\\senai.inlock.webApi.csproj",
+        "projectUniqueName": "C:\\Users\\Basilios\\Desktop\\Ex2ºSemestre\\2Semestre1Sprint\\API - Inlock\\API\\senai.inlock.webApi\\senai.inlock.webApi\\senai.inlock.webApi.csproj",
         "projectName": "senai.inlock.webApi",
-        "projectPath": "C:\\Users\\51910007811\\Desktop\\2ºSemestre\\2Semestre1Sprint\\API - Inlock\\API\\senai.inlock.webApi\\senai.inlock.webApi\\senai.inlock.webApi.csproj",
-        "packagesPath": "C:\\Users\\51910007811\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\51910007811\\Desktop\\2ºSemestre\\2Semestre1Sprint\\API - Inlock\\API\\senai.inlock.webApi\\senai.inlock.webApi\\obj\\",
+        "projectPath": "C:\\Users\\Basilios\\Desktop\\Ex2ºSemestre\\2Semestre1Sprint\\API - Inlock\\API\\senai.inlock.webApi\\senai.inlock.webApi\\senai.inlock.webApi.csproj",
+        "packagesPath": "C:\\Users\\Basilios\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Basilios\\Desktop\\Ex2ºSemestre\\2Semestre1Sprint\\API - Inlock\\API\\senai.inlock.webApi\\senai.inlock.webApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\51910007811\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Basilios\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -76,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

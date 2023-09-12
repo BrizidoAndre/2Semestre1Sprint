@@ -1,5 +1,6 @@
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,48 @@ var builder = WebApplication.CreateBuilder(args);
 
 //Adiciona o serviço de controllers
 builder.Services.AddControllers();
+
+
+//Não esquecer de adicionar os 2 nuggets seguintes
+//System.IdentityModel.Tokens.Jwt
+//Microsoft.AspNetCore.Authentication.JwtBearer
+
+
+//Adiciona serviço de Jwt Bearer (forma de autenticação)
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultChallengeScheme = "JwtBearer";
+    options.DefaultAuthenticateScheme = "JwtBearer";
+})
+
+.AddJwtBearer("JwtBearer", options =>
+{
+    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+    {
+        //Valida quem está solicitando
+        ValidateIssuer = true,
+
+        //Valida quem está recebendo
+        ValidateAudience = true,
+
+        //Define se o tempo de expiração será validado
+        ValidateLifetime = true,
+
+        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("inlock-chave-autenticacao-webapi-exercicio")),
+
+        //Valida o tempo de expiração do token
+        ClockSkew = TimeSpan.FromMinutes(5),
+
+        //Nome do issuer (de onde está vindo)
+        ValidIssuer = "senai.inlock.webApi",
+
+        //Nome do audience (para onde está indo)
+        ValidAudience = "senai.inlock.webApi"
+
+    };
+});
+
+
 
 //Adicione o serviço Swagger à coleção de serviços
 builder.Services.AddSwaggerGen(options =>
@@ -29,6 +72,36 @@ builder.Services.AddSwaggerGen(options =>
     //// Configura o Swagger para usar o arquivo XML gerado
     //var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     //options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+
+    //BLOCO DE CÓDIGO PARA APARECER UM INPUT DE AUTENTICAÇÃO NO SWAGGER
+    //NESSE INPUT NÓS DEVEMOS SEMPRE COLOCAR UM "Bearer" ANTES DE COLOCAR UM TOKEN
+
+    //Usando a autenticaçao no Swagger
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Value: Bearer TokenJWT ",
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] {}
+        }
+    });
+
+    // FIM DO BLOCO DE CÓDIGO PARA AUTENTICAÇÃO DO SWAGGER
 });
 
 //Adiciona o serviço Swagger
@@ -54,6 +127,11 @@ app.UseSwaggerUI(options =>
 //Adiciona mapeamento dos Controllers
 app.MapControllers();
 
+//Adiciona autenticação
+app.UseAuthentication();
+
+//Adiciona autorização
+app.UseAuthorization();
 
 app.UseHttpsRedirection();
 

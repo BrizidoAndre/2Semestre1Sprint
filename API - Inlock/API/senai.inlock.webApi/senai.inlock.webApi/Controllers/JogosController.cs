@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai.inlock.webApi.Domains;
 using senai.inlock.webApi.Interfaces;
@@ -20,6 +21,7 @@ namespace senai.inlock.webApi.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "Administrador, Comum")]
         public IActionResult ListarJogos()
         {
             try
@@ -34,6 +36,7 @@ namespace senai.inlock.webApi.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Cadastrar(JogosDomain jogosCadastrado)
         {
             try
