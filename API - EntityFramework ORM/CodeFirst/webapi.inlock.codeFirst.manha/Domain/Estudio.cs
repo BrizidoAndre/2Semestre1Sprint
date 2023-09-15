@@ -15,3 +15,4 @@ namespace webapi.inlock.codeFirst.manha.Domain
         public List<Jogo>? Jogo { get; set; }
     }
 }
+ 

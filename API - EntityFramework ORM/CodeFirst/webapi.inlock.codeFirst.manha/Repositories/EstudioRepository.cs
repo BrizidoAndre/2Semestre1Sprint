@@ -26,7 +26,15 @@ namespace webapi.inlock.codeFirst.manha.Repositories
 
         public List<Estudio> Listar()
         {
-            return ctx.Estudio.ToList();
+            try
+            {
+                return ctx.Estudio.ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public List<Estudio> ListarTodos()

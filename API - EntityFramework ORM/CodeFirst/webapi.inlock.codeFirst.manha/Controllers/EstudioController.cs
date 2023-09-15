@@ -8,7 +8,7 @@ namespace webapi.inlock.codeFirst.manha.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Produces("json/application")]
+    [Produces("application/json")]
     public class EstudioController : ControllerBase
     {
         private IEstudioRepository _estudioRepository;
@@ -22,13 +22,11 @@ namespace webapi.inlock.codeFirst.manha.Controllers
         {
             try
             {
-
                 return Ok(_estudioRepository.Listar());
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-                throw;
             }
         }
 
