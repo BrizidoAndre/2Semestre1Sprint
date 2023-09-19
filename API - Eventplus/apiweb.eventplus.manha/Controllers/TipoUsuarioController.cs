@@ -18,14 +18,14 @@ namespace apiweb.eventplus.manha.Controllers
             _tipoUsuarioRepository = new TipoUsuarioRepository();
         }
 
-        [HttpPost]
-        public IActionResult Post(TipoUsuario tipoUsuario)
+
+        [HttpGet]
+        public IActionResult Get()
         {
             try
             {
-                _tipoUsuarioRepository.Cadastrar(tipoUsuario);
-
-                return StatusCode(201);
+               
+                return Ok(_tipoUsuarioRepository.Listar());
             }
             catch (Exception e)
             {
@@ -33,12 +33,13 @@ namespace apiweb.eventplus.manha.Controllers
             }
         }
 
-        [HttpGet]
-        public IActionResult Get()
+        [HttpPost]
+        public IActionResult Post(TipoUsuario tipoUsuario)
         {
             try
             {
-                _tipoUsuarioRepository.Listar();
+                _tipoUsuarioRepository.Cadastrar(tipoUsuario);
+
                 return StatusCode(201);
             }
             catch (Exception e)
