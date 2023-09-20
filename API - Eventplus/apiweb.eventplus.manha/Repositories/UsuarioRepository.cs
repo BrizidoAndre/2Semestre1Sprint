@@ -12,14 +12,28 @@ namespace apiweb.eventplus.manha.Repositories
 
         public UsuarioRepository()
         {
-               _eventContext= new EventContext();
+            _eventContext = new EventContext();
         }
 
         public Usuario BuscarPorEmailSenha(string email, string senha)
         {
             try
             {
-                Usuario usuarioBuscado = _eventContext.Usuario.FirstOrDefault(u => u.Email == email)!;
+                Usuario usuarioBuscado = _eventContext.Usuario
+                    .Select(z => new Usuario
+                    {
+                        IdUsuario = z.IdUsuario,
+                        Nome = z.Nome,
+                        Senha = z.Senha,
+                        Email = z.Email,
+                        IdTipoUsuario = z.IdTipoUsuario,
+                        TipoUsuario = new TipoUsuario
+                        {
+                            IdTipoUsuario = z.IdTipoUsuario,
+                            Titulo = z.TipoUsuario!.Titulo
+                        }
+                    }).FirstOrDefault(z => z.Email == email)!;
+
 
 
                 if (usuarioBuscado != null)
@@ -33,7 +47,7 @@ namespace apiweb.eventplus.manha.Repositories
                     }
                 }
 
-                    return null!;
+                return null!;
             }
             catch (Exception)
             {
@@ -61,7 +75,7 @@ namespace apiweb.eventplus.manha.Repositories
                 {
                     return usuarioBuscado;
                 }
-                return null;
+                return null!;
             }
             catch (Exception)
             {
@@ -83,7 +97,7 @@ namespace apiweb.eventplus.manha.Repositories
 
                 throw;
             }
-            
+
         }
     }
 }

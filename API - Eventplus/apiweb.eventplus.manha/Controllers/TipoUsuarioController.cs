@@ -1,6 +1,7 @@
 ﻿using apiweb.eventplus.manha.Domains;
 using apiweb.eventplus.manha.Interfaces;
 using apiweb.eventplus.manha.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,8 +20,9 @@ namespace apiweb.eventplus.manha.Controllers
         }
 
 
-        [HttpGet]
-        public IActionResult Get()
+        [HttpGet("Listar")]
+        [Authorize(Roles = "Administrador")]
+        public IActionResult Listar()
         {
             try
             {
