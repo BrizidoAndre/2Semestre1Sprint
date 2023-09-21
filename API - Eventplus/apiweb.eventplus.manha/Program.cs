@@ -49,7 +49,7 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-builder.Services.AddEndpointsApiExplorer();
+
 //Adicione o serviço Swagger à coleção de serviços
 builder.Services.AddSwaggerGen(options =>
 {
@@ -101,8 +101,6 @@ builder.Services.AddSwaggerGen(options =>
 
 });
 
-//Adiciona o serviço Swagger
-builder.Services.AddSwaggerGen();
 
 
 var app = builder.Build();
@@ -119,9 +117,10 @@ app.UseSwaggerUI(options =>
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
     options.RoutePrefix = string.Empty;
 });
-//Finaliza a configuração Swagger
 
-app.UseHttpsRedirection();
+//Finaliza a configuração Swagger
+app.MapControllers();
+
 
 
 //Adiciona autenticação
@@ -130,6 +129,6 @@ app.UseAuthentication();
 //Adiciona autorização
 app.UseAuthorization();
 
-app.MapControllers();
+app.UseHttpsRedirection();
 
 app.Run();

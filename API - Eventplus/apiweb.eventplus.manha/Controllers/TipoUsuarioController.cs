@@ -20,8 +20,8 @@ namespace apiweb.eventplus.manha.Controllers
         }
 
 
-        [HttpGet("Listar")]
-        [Authorize(Roles = "Administrador")]
+        [HttpGet]
+        [Authorize(Roles ="Administrador")]
         public IActionResult Listar()
         {
             try

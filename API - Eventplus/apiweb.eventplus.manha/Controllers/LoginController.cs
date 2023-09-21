@@ -33,7 +33,7 @@ namespace apiweb.eventplus.manha.Controllers
                     var claims = new[]
                     {
                         new Claim(JwtRegisteredClaimNames.Jti,usuarioBuscado.IdUsuario.ToString()),
-                        new Claim(JwtRegisteredClaimNames.Jti,usuarioBuscado.IdTipoUsuario.ToString()),
+                        new Claim("IdTipoUsuario",usuarioBuscado.IdTipoUsuario.ToString()),
                         new Claim(JwtRegisteredClaimNames.Name,usuarioBuscado.Nome),
                         new Claim(JwtRegisteredClaimNames.Email,usuarioBuscado.Email),
                         new Claim(ClaimTypes.Role,usuarioBuscado.TipoUsuario.Titulo)
