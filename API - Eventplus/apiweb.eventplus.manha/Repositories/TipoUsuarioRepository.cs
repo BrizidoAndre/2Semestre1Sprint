@@ -15,12 +15,29 @@ namespace apiweb.eventplus.manha.Repositories
 
         public void Atualizar(Guid id, TipoUsuario tipoUsuario)
         {
-            throw new NotImplementedException();
+            TipoUsuario usuarioAntigo = _eventContext.TipoUsuario.FirstOrDefault(z => z.IdTipoUsuario == id)!;
+
+            usuarioAntigo.Titulo = tipoUsuario.Titulo;
+
+            _eventContext.TipoUsuario.Update(usuarioAntigo);
+
+            _eventContext.SaveChanges();
+
+
         }
 
         public TipoUsuario BuscarPorId(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                TipoUsuario usuarioBuscado = _eventContext.TipoUsuario.FirstOrDefault(z => z.IdTipoUsuario == id)!;
+                return usuarioBuscado;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void Cadastrar(TipoUsuario tipoUsuario)
@@ -32,7 +49,9 @@ namespace apiweb.eventplus.manha.Repositories
 
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            TipoUsuario tipoUsuario = _eventContext.TipoUsuario.FirstOrDefault(z => z.IdTipoUsuario == id)!;
+            _eventContext.TipoUsuario.Remove(tipoUsuario);
+            _eventContext.SaveChanges();
         }
 
         public List<TipoUsuario> Listar()

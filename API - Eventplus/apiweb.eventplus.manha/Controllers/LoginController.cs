@@ -58,7 +58,7 @@ namespace apiweb.eventplus.manha.Controllers
                         claims: claims,
 
                         //tempo de expiração do token
-                        expires: DateTime.Now.AddMinutes(5),
+                        expires: DateTime.Now.AddMinutes(50),
 
                         //credenciais do token
                         signingCredentials: creds

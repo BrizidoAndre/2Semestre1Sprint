@@ -21,12 +21,12 @@ namespace apiweb.eventplus.manha.Controllers
 
 
         [HttpGet]
-        [Authorize(Roles ="Administrador")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Listar()
         {
             try
             {
-               
+
                 return Ok(_tipoUsuarioRepository.Listar());
             }
             catch (Exception e)
@@ -36,6 +36,7 @@ namespace apiweb.eventplus.manha.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Post(TipoUsuario tipoUsuario)
         {
             try
@@ -49,5 +50,60 @@ namespace apiweb.eventplus.manha.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrador")]
+        public IActionResult Delete(Guid id)
+        {
+            try
+            {
+                if (_tipoUsuarioRepository.BuscarPorId(id) == null)
+                {
+                    return Ok("Tipo de Usuário não existe");
+                }
+                _tipoUsuarioRepository.Delete(id);
+                return StatusCode(204);
+
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost("{id}")]
+        [Authorize(Roles = "Administrador, Aluno")]
+        public IActionResult GetWithId(Guid id)
+        {
+            try
+            {
+                return Ok(_tipoUsuarioRepository.BuscarPorId(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPut("{_id}")]
+        [Authorize(Roles = "Administrador")]
+        public IActionResult Put(Guid _id, TipoUsuario tipoUsuario)
+        {
+            try
+            {
+                if (_tipoUsuarioRepository.BuscarPorId(_id) != null)
+                {
+                    _tipoUsuarioRepository.Atualizar(_id, tipoUsuario);
+                    return Ok("Usuario Atualizado");
+                }
+                return Ok("Usuario não encontrado");
+
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }
+

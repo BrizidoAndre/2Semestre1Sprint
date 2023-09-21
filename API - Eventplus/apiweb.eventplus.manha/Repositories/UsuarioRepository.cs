@@ -65,6 +65,7 @@ namespace apiweb.eventplus.manha.Repositories
                     {
                         IdUsuario = u.IdUsuario,
                         Nome = u.Nome,
+                        Email= u.Email,
                         TipoUsuario = new TipoUsuario
                         {
                             IdTipoUsuario = u.IdTipoUsuario,
