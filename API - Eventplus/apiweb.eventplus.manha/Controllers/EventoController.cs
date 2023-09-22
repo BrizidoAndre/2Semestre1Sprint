@@ -9,44 +9,46 @@ namespace apiweb.eventplus.manha.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class TipoEventoController : ControllerBase
+    public class EventoController : ControllerBase
     {
-        private ITipoEventoRepository _tipoEventoRepository;
+        IEventoRepository _eventoRepository;
 
-        public TipoEventoController()
+        public EventoController()
         {
-            _tipoEventoRepository = new TipoEventoRepository();
+            _eventoRepository = new EventoRepository();
         }
 
         [HttpGet]
-        public IActionResult GetList()
+        public IActionResult Get()
         {
             try
             {
-                return Ok(_tipoEventoRepository.Listar());
+                return Ok(_eventoRepository.Listar());
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
+                throw;
             }
         }
 
         [HttpPost]
-        public IActionResult Post(TipoEvento tipoEvento)
+        public IActionResult Post(Evento evento)
         {
             try
             {
-                if (tipoEvento != null)
+                if (evento != null)
                 {
-                    _tipoEventoRepository.Cadastrar(tipoEvento);
-
-                    return Ok("Tipo de evento cadastrado");
+                    _eventoRepository.Cadastrar(evento);
+                    return Ok("Evento cadastrado!");
                 }
-                return Ok("Tipo de evendo não foi digitado corretamente");
+
+                return Ok("Evento digitado incorretamente");
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
+                throw;
             }
         }
 
@@ -55,13 +57,8 @@ namespace apiweb.eventplus.manha.Controllers
         {
             try
             {
-                if (_tipoEventoRepository.BuscarPorId(id) != null)
-                {
-                    _tipoEventoRepository.Delete(id);
-                    
-                    return Ok("Tipo de Evento deletado!");
-                }
-                return Ok("O Tipo de evento buscado não aparece!");
+                _eventoRepository.Delete(id);
+                return Ok("Evento deletado!");
             }
             catch (Exception e)
             {
@@ -74,13 +71,7 @@ namespace apiweb.eventplus.manha.Controllers
         {
             try
             {
-                TipoEvento tipoBuscado = _tipoEventoRepository.BuscarPorId(id);
-                if (tipoBuscado != null)
-                {
-                    return Ok(tipoBuscado);
-                }
-
-                return Ok("Tipo de evento não encontrado");
+                return Ok(_eventoRepository.BuscarPorId(id));
             }
             catch (Exception e)
             {
@@ -89,17 +80,18 @@ namespace apiweb.eventplus.manha.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(Guid id, TipoEvento tipoEvento)
+        public IActionResult Put(Guid id, Evento evento)
         {
             try
             {
-                _tipoEventoRepository.Atualizar(id, tipoEvento);
-                return Ok("Tipo de evento atualizado");
+                _eventoRepository.Atualizar(id, evento);
+                return Ok("Evento atualizado!");
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
             }
         }
+
     }
 }

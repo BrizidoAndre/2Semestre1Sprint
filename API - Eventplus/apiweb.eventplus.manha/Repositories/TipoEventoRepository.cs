@@ -4,7 +4,7 @@ using apiweb.eventplus.manha.Interfaces;
 
 namespace apiweb.eventplus.manha.Repositories
 {
-    public class TipoEventoRepository : ITipoEventoRepostory
+    public class TipoEventoRepository : ITipoEventoRepository
     {
         private readonly EventContext _eventContext;
         public TipoEventoRepository()
