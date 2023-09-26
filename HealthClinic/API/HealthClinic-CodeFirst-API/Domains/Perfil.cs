@@ -11,7 +11,7 @@ namespace HealthClinic_CodeFirst_API.Domains
 
         [Column(TypeName ="VARCHAR(50)")]
         [Required(ErrorMessage ="Um tipo de perfil é obrigatório")]
-        public string TipoDePerfil { get; set; }
+        public string? TipoDePerfil { get; set; }
 
     }
 }

@@ -11,6 +11,6 @@ namespace HealthClinic_CodeFirst_API.Domains
 
         [Column(TypeName ="VARCHAR(80)")]
         [Required(ErrorMessage ="A especialidade é obrigatória")]
-        public string Titulo { get; set; }
+        public string? Titulo { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace HealthClinic_CodeFirst_API.Domains
 
         [Column(TypeName = "VARCHAR(14)")]
         [Required(ErrorMessage = "Um CPF é obrigatório")]
-        [StringLength(14, ErrorMessage = "O CPF deve obrigatoriamente conter 14 caracteres")]
+        [StringLength(11, ErrorMessage = "O CPF deve obrigatoriamente conter 11 caracteres")]
         public string? CPF { get; set; }
     }
 }
