@@ -55,6 +55,7 @@ namespace apiweb.eventplus.manha.Repositories
             try
             {
                 PresencaEvento eventoDeletado = _eventContext.PresencaEvento.FirstOrDefault(z => z.IdPresencaEvento == id)!;
+                _eventContext.PresencaEvento.Remove(eventoDeletado);
                 _eventContext.SaveChanges();
             }
             catch (Exception)
