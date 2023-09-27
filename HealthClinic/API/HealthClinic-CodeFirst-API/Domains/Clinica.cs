@@ -22,12 +22,12 @@ namespace HealthClinic_CodeFirst_API.Domains
         [Required(ErrorMessage ="A razão social é obrigatória")]
         public string? RazaoSocial { get; set; }
 
-        [Column(TypeName ="TIME")]
+        [Column(TypeName ="DATETIME")]
         [Required(ErrorMessage ="O horário de abertura é obrigatório")]
-        public string? HorarioAbertura { get; set; }
+        public DateTime? HorarioAbertura { get; set; }
 
-        [Column(TypeName = "TIME")]
+        [Column(TypeName = "DATETIME")]
         [Required(ErrorMessage = "O horário de fechamento é obrigatório")]
-        public string? HorarioEncerramento { get; set; }
+        public DateTime? HorarioEncerramento { get; set; }
     }
 }

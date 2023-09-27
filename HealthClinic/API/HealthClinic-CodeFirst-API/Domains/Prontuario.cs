@@ -11,7 +11,6 @@ namespace HealthClinic_CodeFirst_API.Domains
         public Guid IdProntuario { get; set; } = Guid.NewGuid();
 
         [Column(TypeName = "TEXT")]
-        [Required(ErrorMessage ="O histórico é obrigatório")]
         public string? Historico { get; set; }
     }
 }

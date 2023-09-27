@@ -20,10 +20,6 @@ namespace HealthClinic_CodeFirst_API.Domains
         [StringLength(60, MinimumLength = 6, ErrorMessage ="A senha deve conter de 6 a 60 caracteres")]
         public string? Senha { get; set; }
 
-        [Column(TypeName ="VARCHAR 70")]
-        [Required(ErrorMessage ="Um nome é obrigatório")]
-        public string? Nome { get; set; }
-
         [Column(TypeName = "VARCHAR(14)")]
         [Required(ErrorMessage = "Um CPF é obrigatório")]
         [StringLength(11, ErrorMessage = "O CPF deve obrigatoriamente conter 11 caracteres")]

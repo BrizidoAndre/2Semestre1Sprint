@@ -18,6 +18,22 @@ namespace HealthClinic_CodeFirst_API.Domains
         [StringLength(11, ErrorMessage ="A CRM deve conter 11 dígitos")]
         public string? CRM { get; set; }
 
-        [ForeignKey(nameof())]
+
+
+        //ref.table Usuario = FK
+        [Required(ErrorMessage ="O tipo de usuário é obrigatório")]
+        public Guid IdUsuario { get; set; }
+
+        [ForeignKey(nameof(IdUsuario))]
+        public Usuario? Usuario { get; set; }
+
+
+
+        //ref.table Especialidade = FK
+        [Required(ErrorMessage ="A especialidade é obrigatória")]
+        public Guid IdEspecialidade { get; set; }
+
+        [ForeignKey(nameof(IdEspecialidade))]
+        public Especialidade? Especialidade { get; set; }
     }
 }
