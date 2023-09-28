@@ -4,6 +4,7 @@ using HealthClinic_CodeFirst_API.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HealthClinic_CodeFirst_API.Migrations
 {
     [DbContext(typeof(HealthContext))]
-    partial class HealthContextModelSnapshot : ModelSnapshot
+    [Migration("20230928132522_MigrationV6")]
+    partial class MigrationV6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,9 +82,6 @@ namespace HealthClinic_CodeFirst_API.Migrations
                     b.Property<Guid>("IdConsulta")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("Confirmacao")
-                        .HasColumnType("BIT");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
@@ -199,7 +199,7 @@ namespace HealthClinic_CodeFirst_API.Migrations
 
                     b.Property<DateTime?>("DataDeNascimento")
                         .IsRequired()
-                        .HasColumnType("DATE");
+                        .HasColumnType("DATETIME");
 
                     b.Property<Guid>("IdPlanoDeSaude")
                         .HasColumnType("uniqueidentifier");

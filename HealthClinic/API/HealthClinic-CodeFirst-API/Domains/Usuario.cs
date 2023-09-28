@@ -24,5 +24,11 @@ namespace HealthClinic_CodeFirst_API.Domains
         [Required(ErrorMessage = "Um CPF é obrigatório")]
         [StringLength(11, ErrorMessage = "O CPF deve obrigatoriamente conter 11 caracteres")]
         public string? CPF { get; set; }
+
+        [Required(ErrorMessage ="É necessário inserir o tipo do perfil")]
+        public Guid IdPerfil { get; set; }
+
+        [ForeignKey(nameof(IdPerfil))]
+        public Perfil? Perfil { get; set; }
     }
 }

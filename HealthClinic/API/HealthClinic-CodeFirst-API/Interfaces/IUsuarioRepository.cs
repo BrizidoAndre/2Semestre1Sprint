@@ -6,6 +6,8 @@ namespace HealthClinic_CodeFirst_API.Interfaces
     {
         void Cadastrar(Usuario usuarioNovo);
 
-        void Alterar(Guid id, Usuario usuarioModificado);
+        void Deletar(string email, string senha);
+
+        Usuario BuscarEmailSenha(string email,string senha);
     }
 }

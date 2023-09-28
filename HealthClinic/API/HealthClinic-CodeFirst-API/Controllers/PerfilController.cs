@@ -1,6 +1,7 @@
 ﻿using HealthClinic_CodeFirst_API.Domains;
 using HealthClinic_CodeFirst_API.Interfaces;
 using HealthClinic_CodeFirst_API.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

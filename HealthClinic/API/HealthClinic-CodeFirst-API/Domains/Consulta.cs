@@ -18,6 +18,11 @@ namespace HealthClinic_CodeFirst_API.Domains
         [Required(ErrorMessage ="A data da consulta é obrigatória")]
         public DateTime? HorarioDaConsulta { get; set; }
 
+        //Uma propriedade bool de confirmação. Se o valor for 0 ou false a consulta foi cancelada, se o valor for 1 ou true a consulta está confirmada
+        [Column(TypeName ="BIT")]
+        [Required(ErrorMessage ="É preciso inserir a confirmacao")]
+        public bool Confirmacao { get; set; }
+
         // re. table Clinica = FK
 
         [Required(ErrorMessage ="É obrigatório inserir uma clínica")]

@@ -18,8 +18,10 @@ namespace HealthClinic_CodeFirst_API.Domains
         public bool? Sexo { get; set; }
         //Aqui temos um valor em bit, se for 0 o paciente é mulher e se for 1 o paciente é homem
 
-        [Column(TypeName ="DATETIME")]
+        [Column(TypeName ="DATE")]
         [Required(ErrorMessage ="A data de nascimento é obrigatória")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? DataDeNascimento { get; set; }
 
         [Required(ErrorMessage ="O tipo do usuário é obrigatório")]

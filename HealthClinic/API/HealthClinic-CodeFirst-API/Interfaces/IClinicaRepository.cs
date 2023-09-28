@@ -8,6 +8,6 @@ namespace HealthClinic_CodeFirst_API.Interfaces
 
         List<Clinica> ListarClinicas();
 
-        void Atualizar(Guid id , Clinica clinica);
+        void Atualizar(Guid id , Clinica c);
     }
 }
