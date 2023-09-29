@@ -13,10 +13,8 @@ namespace HealthClinic_CodeFirst_API.ViewModels
         {
             _healthContext= new HealthContext();
         }
-        private Guid idPaciente = Guid.Parse("9501E1A9-63CB-4B4D-BC97-90008143363E")
-        {
-            IdPerfil = z.IdPerfil
-        }).FirstOrDefault(z => z.TipoDePerfil == "Paciente");
+        private Guid idPaciente = Guid.Parse("9501E1A9-63CB-4B4D-BC97-90008143363E");
+
 
         [Column(TypeName = "VARCHAR(80)")]
         [Required(ErrorMessage = "O nome do paciente é obrigatório")]
@@ -32,10 +30,8 @@ namespace HealthClinic_CodeFirst_API.ViewModels
         public DateOnly? DataDeNascimento { get; set; }
 
         [Required(ErrorMessage = "O tipo do usuário é obrigatório")]
-        public Guid IdUsuario { get; set; } 
+        public Guid IdUsuario { get; set; }
 
-        [Required(ErrorMessage = "Um plano de saúde deve ser inserido")]
-        public Guid IdPlanoDeSaude { get; set; }
         
 
 
