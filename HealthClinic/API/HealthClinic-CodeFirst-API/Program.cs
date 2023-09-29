@@ -118,7 +118,7 @@ app.UseSwaggerUI(options =>
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
-
+//O authorization obrigatoriamente deve ficar embaixo da authentication
 app.UseAuthorization();
 
 app.MapControllers();

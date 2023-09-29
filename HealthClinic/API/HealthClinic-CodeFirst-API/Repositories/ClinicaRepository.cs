@@ -24,6 +24,7 @@ namespace HealthClinic_CodeFirst_API.Repositories
                 clinicaVelha.Endereco = c.Endereco;
 
                 _healthContext.Clinica.Update(clinicaVelha);
+                _healthContext.SaveChanges();
             }
             catch (Exception)
             {
@@ -37,6 +38,7 @@ namespace HealthClinic_CodeFirst_API.Repositories
             try
             {
                 _healthContext.Clinica.Add(clinicaNova);
+                _healthContext.SaveChanges();
             }
             catch (Exception)
             {

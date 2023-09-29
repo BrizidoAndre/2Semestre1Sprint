@@ -24,14 +24,10 @@ namespace HealthClinic_CodeFirst_API.Domains
 
         [Column(TypeName ="TIME")]
         [Required(ErrorMessage ="O horário de abertura é obrigatório")]
-        [DataType(DataType.Time)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm")]
-        public TimeSpan? HorarioAbertura { get; set; }
+        public TimeOnly? HorarioAbertura { get; set; }
 
         [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "O horário de fechamento é obrigatório")]
-        [DataType(DataType.Time)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm")]
-        public TimeSpan? HorarioEncerramento { get; set; }
+        public TimeOnly? HorarioEncerramento { get; set; }
     }
 }

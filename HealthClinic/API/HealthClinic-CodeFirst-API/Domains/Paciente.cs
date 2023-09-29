@@ -20,9 +20,7 @@ namespace HealthClinic_CodeFirst_API.Domains
 
         [Column(TypeName ="DATE")]
         [Required(ErrorMessage ="A data de nascimento é obrigatória")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        public DateTime? DataDeNascimento { get; set; }
+        public DateOnly? DataDeNascimento { get; set; }
 
         [Required(ErrorMessage ="O tipo do usuário é obrigatório")]
         public Guid IdUsuario { get; set; }

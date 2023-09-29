@@ -9,12 +9,12 @@ namespace HealthClinic_CodeFirst_API.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class ClinicaController : ControllerBase
+    public class PlanoDeSaudeController : ControllerBase
     {
-        private IClinicaRepository _clinicaRepository;
-        public ClinicaController()
+        private IPlanoDeSaudeRepository _planoDeSaudeRepository;
+        public PlanoDeSaudeController()
         {
-            _clinicaRepository = new ClinicaRepository();
+            _planoDeSaudeRepository = new PlanoDeSaudeRepository();
         }
 
         [HttpGet]
@@ -22,7 +22,7 @@ namespace HealthClinic_CodeFirst_API.Controllers
         {
             try
             {
-                return Ok(_clinicaRepository.ListarClinicas());
+                return Ok(_planoDeSaudeRepository.Listar());
             }
             catch (Exception e)
             {
@@ -31,11 +31,11 @@ namespace HealthClinic_CodeFirst_API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Clinica clinica)
+        public IActionResult Post(PlanoDeSaude planoNovo)
         {
             try
             {
-                _clinicaRepository.Cadastrar(clinica); 
+                _planoDeSaudeRepository.Cadastrar(planoNovo);
                 return Ok();
             }
             catch (Exception e)
@@ -44,12 +44,26 @@ namespace HealthClinic_CodeFirst_API.Controllers
             }
         }
 
-        [HttpPut("{id}")]
-        public IActionResult Put(Guid id, Clinica clinica)
+        [HttpDelete]
+        public IActionResult Delete(Guid id)
         {
             try
             {
-                _clinicaRepository.Atualizar(id, clinica);
+                _planoDeSaudeRepository.Deletar(id);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPut]
+        public IActionResult Put(Guid id, PlanoDeSaude planoModificado)
+        {
+            try
+            {
+                _planoDeSaudeRepository.Atualizar(id, planoModificado);
                 return Ok();
             }
             catch (Exception e)

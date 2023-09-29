@@ -9,12 +9,13 @@ namespace HealthClinic_CodeFirst_API.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class ClinicaController : ControllerBase
+    public class EspecialidadeController : ControllerBase
     {
-        private IClinicaRepository _clinicaRepository;
-        public ClinicaController()
+        private IEspecialidadeRepository _especialidadeRepository;
+
+        public EspecialidadeController()
         {
-            _clinicaRepository = new ClinicaRepository();
+            _especialidadeRepository=new EspecialidadeRepository();
         }
 
         [HttpGet]
@@ -22,7 +23,7 @@ namespace HealthClinic_CodeFirst_API.Controllers
         {
             try
             {
-                return Ok(_clinicaRepository.ListarClinicas());
+                return Ok(_especialidadeRepository.Listar());
             }
             catch (Exception e)
             {
@@ -31,11 +32,26 @@ namespace HealthClinic_CodeFirst_API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Clinica clinica)
+        public IActionResult Post(Especialidade especialidade)
         {
             try
             {
-                _clinicaRepository.Cadastrar(clinica); 
+                _especialidadeRepository.Cadastrar(especialidade);
+
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpDelete("{id}")] 
+        public IActionResult Delete(Guid id)
+        {
+            try
+            {
+                _especialidadeRepository.Deletar(id);
                 return Ok();
             }
             catch (Exception e)
@@ -45,11 +61,11 @@ namespace HealthClinic_CodeFirst_API.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(Guid id, Clinica clinica)
+        public IActionResult Put(Guid id, Especialidade especialidade)
         {
             try
             {
-                _clinicaRepository.Atualizar(id, clinica);
+                _especialidadeRepository.Atualizar(id, especialidade);
                 return Ok();
             }
             catch (Exception e)
