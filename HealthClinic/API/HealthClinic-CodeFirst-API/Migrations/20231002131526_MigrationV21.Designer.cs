@@ -4,6 +4,7 @@ using HealthClinic_CodeFirst_API.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HealthClinic_CodeFirst_API.Migrations
 {
     [DbContext(typeof(HealthContext))]
-    partial class HealthContextModelSnapshot : ModelSnapshot
+    [Migration("20231002131526_MigrationV21")]
+    partial class MigrationV21
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -103,6 +106,9 @@ namespace HealthClinic_CodeFirst_API.Migrations
                     b.Property<Guid>("IdPaciente")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("IdProntuario")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("IdConsulta");
 
                     b.HasIndex("IdAdministrador");
@@ -112,6 +118,8 @@ namespace HealthClinic_CodeFirst_API.Migrations
                     b.HasIndex("IdMedico");
 
                     b.HasIndex("IdPaciente");
+
+                    b.HasIndex("IdProntuario");
 
                     b.ToTable("Consulta");
                 });
@@ -338,6 +346,12 @@ namespace HealthClinic_CodeFirst_API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("HealthClinic_CodeFirst_API.Domains.Prontuario", "Prontuario")
+                        .WithMany()
+                        .HasForeignKey("IdProntuario")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Administrador");
 
                     b.Navigation("Clinica");
@@ -345,6 +359,8 @@ namespace HealthClinic_CodeFirst_API.Migrations
                     b.Navigation("Medico");
 
                     b.Navigation("Paciente");
+
+                    b.Navigation("Prontuario");
                 });
 
             modelBuilder.Entity("HealthClinic_CodeFirst_API.Domains.Feedback", b =>

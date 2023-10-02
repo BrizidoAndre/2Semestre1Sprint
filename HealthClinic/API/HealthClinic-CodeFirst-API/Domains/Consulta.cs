@@ -39,22 +39,6 @@ namespace HealthClinic_CodeFirst_API.Domains
         [ForeignKey(nameof(IdAdministrador))]
         public Administrador? Administrador { get; set; }
 
-        // re. table Prontuario = FK
-
-        [Required(ErrorMessage = "É obrigatório inserir um Prontuario")]
-        public Guid IdProntuario { get; set; }
-
-        [ForeignKey(nameof(IdProntuario))]
-        public Prontuario? Prontuario { get; set; }
-
-        // re. table Paciente = FK
-
-        [Required(ErrorMessage = "É obrigatório inserir um Paciente")]
-        public Guid IdPaciente { get; set; }
-
-        [ForeignKey(nameof(IdPaciente))]
-        public Paciente? Paciente { get; set; }
-
         // re. table Medico = FK
 
         [Required(ErrorMessage = "É obrigatório inserir um Médico")]
@@ -63,7 +47,13 @@ namespace HealthClinic_CodeFirst_API.Domains
         [ForeignKey(nameof(IdMedico))]
         public Medico? Medico { get; set; }
 
-        
+        // re. table Paciente = FK
+
+        [Required(ErrorMessage = "É obrigatório inserir um Paciente")]
+        public Guid IdPaciente { get; set; }
+
+        [ForeignKey(nameof(IdPaciente))]
+        public Paciente? Paciente { get; set; }
 
     }
 }

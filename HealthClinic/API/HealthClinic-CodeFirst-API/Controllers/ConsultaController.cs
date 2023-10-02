@@ -9,33 +9,20 @@ namespace HealthClinic_CodeFirst_API.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class PlanoDeSaudeController : ControllerBase
+    public class ConsultaController : ControllerBase
     {
-        private IPlanoDeSaudeRepository _planoDeSaudeRepository;
-        public PlanoDeSaudeController()
+        private IConsultaRepository _consultaRepository;
+        public ConsultaController()
         {
-            _planoDeSaudeRepository = new PlanoDeSaudeRepository();
-        }
-
-        [HttpGet]
-        public IActionResult Get()
-        {
-            try
-            {
-                return Ok(_planoDeSaudeRepository.Listar());
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
+            _consultaRepository = new ConsultaRepository();
         }
 
         [HttpPost]
-        public IActionResult Post(PlanoDeSaude planoNovo)
+        public IActionResult Post(Consulta consulta)
         {
             try
             {
-                _planoDeSaudeRepository.Cadastrar(planoNovo);
+                _consultaRepository.Cadastrar(consulta);
                 return Ok();
             }
             catch (Exception e)
@@ -49,7 +36,7 @@ namespace HealthClinic_CodeFirst_API.Controllers
         {
             try
             {
-                _planoDeSaudeRepository.Deletar(id);
+                _consultaRepository.Deletar(id);
                 return Ok();
             }
             catch (Exception e)
@@ -58,12 +45,38 @@ namespace HealthClinic_CodeFirst_API.Controllers
             }
         }
 
-        [HttpPut("{id}")]
-        public IActionResult Put(Guid id, PlanoDeSaude planoModificado)
+        [HttpGet("ListarUser/{id}")]
+        public IActionResult GetPaciente(Guid id)
         {
             try
             {
-                _planoDeSaudeRepository.Atualizar(id, planoModificado);
+                return Ok(_consultaRepository.ListarDePaciente(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet("ListarMedico/{id}")]
+        public IActionResult GetMedico(Guid id)
+        {
+            try
+            {
+                return Ok(_consultaRepository.ListarDeMedico(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Put(Guid id, Consulta consulta)
+        {
+            try
+            {
+                _consultaRepository.Atualizar(id, consulta);
                 return Ok();
             }
             catch (Exception e)

@@ -12,5 +12,13 @@ namespace HealthClinic_CodeFirst_API.Domains
 
         [Column(TypeName = "TEXT")]
         public string? Historico { get; set; }
+
+        // re. table Paciente = FK
+
+        [Required(ErrorMessage = "É obrigatório inserir um Paciente")]
+        public Guid IdPaciente { get; set; }
+
+        [ForeignKey(nameof(IdPaciente))]
+        public Paciente? Paciente { get; set; }
     }
 }

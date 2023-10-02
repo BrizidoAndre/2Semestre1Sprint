@@ -10,6 +10,6 @@ namespace HealthClinic_CodeFirst_API.Interfaces
         List<Consulta> ListarDePaciente(Guid idPaciente);
 
         void Deletar(Guid id);
-        void AdicionarProntuario(Guid idProntuario, Guid idConsulta);
+        void Atualizar(Guid id, Consulta consulta);
     }
 }
