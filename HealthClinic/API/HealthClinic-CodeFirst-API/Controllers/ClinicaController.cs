@@ -1,6 +1,7 @@
 ﻿using HealthClinic_CodeFirst_API.Domains;
 using HealthClinic_CodeFirst_API.Interfaces;
 using HealthClinic_CodeFirst_API.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,6 +32,7 @@ namespace HealthClinic_CodeFirst_API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Post(Clinica clinica)
         {
             try

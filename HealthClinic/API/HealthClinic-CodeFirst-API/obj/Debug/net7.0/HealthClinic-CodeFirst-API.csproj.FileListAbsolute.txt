@@ -82,3 +82,5 @@ C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\HealthClinic\API\Healt
 C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\HealthClinic\API\HealthClinic-CodeFirst-API\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\HealthClinic\API\HealthClinic-CodeFirst-API\bin\Debug\net7.0\EntityFrameworkCore.SqlServer.DateOnlyTimeOnly.dll
 C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\HealthClinic\API\HealthClinic-CodeFirst-API\obj\Debug\net7.0\EFCoreSqlServerDateOnlyTimeOnly.cs
+C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\HealthClinic\API\HealthClinic-CodeFirst-API\bin\Debug\net7.0\HealthClinic-CodeFirst-API.xml
+C:\Users\51910007811\Desktop\2ºSemestre\2Semestre1Sprint\HealthClinic\API\HealthClinic-CodeFirst-API\obj\Debug\net7.0\HealthClinic-CodeFirst-API.xml

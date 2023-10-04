@@ -44,33 +44,55 @@ namespace HealthClinic_CodeFirst_API.Repositories
 
         public List<Feedback> ListarDeUsuario(Guid id)
         {
-            _healthContext.Feedback.Select(z => new Feedback
+            //return _healthContext.Feedback.Select(z => new Feedback
+            //{
+            //    Comentario = z.Comentario,
+            //    IdConsulta = z.IdConsulta,
+            //    Consulta = new Consulta
+            //    {
+            //        IdClinica = z.Consulta.IdClinica,
+            //        Clinica = new Clinica
+            //        {
+            //            RazaoSocial = z.Consulta!.Clinica!.RazaoSocial,
+            //        },
+            //        HorarioDaConsulta = z.Consulta.HorarioDaConsulta,
+            //        Descricao = z.Consulta.Descricao,
+            //        IdMedico = z.Consulta.IdMedico,
+            //        Medico = new Medico
+            //        {
+            //            Nome = z.Consulta.Medico!.Nome,
+            //            IdEspecialidade= z.Consulta.Medico.IdEspecialidade,
+            //            Especialidade = new Especialidade
+            //            {
+            //                Titulo = z.Consulta.Medico.Especialidade!.Titulo
+            //            }
+            //        },
+            //        IdPaciente= z.Consulta.IdPaciente,
+            //        Paciente = new Paciente
+            //        {
+            //            Name = z.Consulta.Paciente!.Name,
+            //            Sexo = z.Consulta.Paciente.Sexo
+            //        }
+            //    }
+            //}).Where(z => z.IdPaciente == id).ToList();
+
+            return _healthContext.Feedback.Select(z => new Feedback
             {
                 Comentario = z.Comentario,
-                Consulta = new Consulta
+                IdPaciente = z.IdPaciente,
+                IdConsulta = z.IdConsulta,
+                Paciente = new Paciente
                 {
-                    Clinica = new Clinica
+                    Name = z.Paciente.Name,
+                    IdPlanoDeSaude = z.Paciente.IdPlanoDeSaude,
+                    PlanoDeSaude = new PlanoDeSaude
                     {
-                        RazaoSocial = z.Consulta.Clinica.RazaoSocial
-                    },
-                    z.Consulta.HorarioDaConsulta,
-                    z.Consulta.Descricao,
-                    Medico = new Medico
-                    {
-                        Nome = z.Consulta.Medico.Nome
-                        Especialidade = new Especialidade
-                        {
-                            Titulo = z.Consulta.Medico.Especialidade.Titulo
-                        }
-                    },
-                    Paciente = new Paciente
-                    {
-                        Name = z.Consulta.Paciente.Name,
-                        Sexo = z.Consulta.Paciente.Sexo
+                        Titulo = z.Paciente.PlanoDeSaude.Titulo
                     }
-                }
-            }
- ) ;
+                },
+                Consulta = z.Consulta,
+
+            }).Where(z => z.IdPaciente == id).ToList();
         }
     }
 }

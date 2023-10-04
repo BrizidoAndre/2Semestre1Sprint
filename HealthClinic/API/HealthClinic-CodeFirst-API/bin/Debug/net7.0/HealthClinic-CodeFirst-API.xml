@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HealthClinic-CodeFirst-API</name>
+    </assembly>
+    <members>
+        <member name="M:HealthClinic_CodeFirst_API.Controllers.FeedbackController.GetWithId(System.Guid)">
+            <summary>
+            Um método para listar todos os feedbacks de um paciente
+            </summary>
+            <param name="id">O id do paciente</param>
+            <returns>Uma lista de feedback de um paciente específico</returns>
+        </member>
+        <member name="T:HealthClinic_CodeFirst_API.Migrations.migrationV1">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.migrationV1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.migrationV1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.migrationV1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:HealthClinic_CodeFirst_API.Migrations.MigrationV3">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV3.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV3.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV3.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:HealthClinic_CodeFirst_API.Migrations.MigrationV5">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV5.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV5.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV5.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:HealthClinic_CodeFirst_API.Migrations.MigrationV6">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV6.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV6.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV6.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:HealthClinic_CodeFirst_API.Migrations.MigrationV9">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV9.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV9.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV9.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:HealthClinic_CodeFirst_API.Migrations.MigrationV10">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV10.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV10.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV10.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:HealthClinic_CodeFirst_API.Migrations.MigrationV11">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV11.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV11.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV11.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:HealthClinic_CodeFirst_API.Migrations.MigrationV20">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV20.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV20.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV20.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:HealthClinic_CodeFirst_API.Migrations.MigrationV21">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV21.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV21.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV21.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:HealthClinic_CodeFirst_API.Migrations.MigrationV23">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV23.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV23.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:HealthClinic_CodeFirst_API.Migrations.MigrationV23.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
