@@ -1,0 +1,45 @@
+Usuario ADM
+
+{
+  "email": "adm@adm.adm",
+  "senha": "adm123456",
+  "cpf": "11345678901",
+  "idPerfil": "c73c3d1f-f6fb-47be-ad89-1a389e3ea5f4"
+}
+
+{
+  "email": "gabriel@email.com",
+  "senha": "gabriel",
+  "cpf": "47349463801",
+  "idPerfil": "C73C3D1F-F6FB-47BE-AD89-1A389E3EA5F4"
+
+}
+usuario Medico
+
+{
+  "email": "medico@medico",
+  "senha": "Doctor",
+  "cpf": "11111111111",
+  "idPerfil": "2862585f-c87f-4014-ae68-e5e4a5890c19"
+}
+
+Usuario Paciente
+
+{
+  "email": "andre@andre.com",
+  "senha": "andre123",
+  "cpf": "51910007810",
+  "idPerfil": "9501e1a9-63cb-4b4d-bc97-90008143363e"
+}
+
+
+Consulta 
+{
+  "descricao": "Uma consulta de primeiro contato, o paciente nunca foi ao médico este ano",
+  "horarioDaConsulta": "2023-10-02T22:30:00.000Z",
+  "confirmacao": true,
+  "idClinica": "a17218fd-92d1-4480-8b87-33125780d73c",
+  "idAdministrador": "8ED5CE58-8187-4380-D1E4-08DBC342DD85",
+  "idMedico": "D9DF1448-C91D-4062-A7A4-C53C144E0216",
+  "idPaciente": "FE1632ED-323C-4E3F-958B-08DBC33E079D"
+}

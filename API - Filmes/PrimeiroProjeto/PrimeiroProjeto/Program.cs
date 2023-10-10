@@ -70,6 +70,8 @@ builder.Services.AddSwaggerGen(options =>
     });
 
     // Configura o Swagger para usar o arquivo XML gerado
+    //Lembre-se de alterar também o arquivo com o nome do projeto para adicionar o recurso de documentação
+    //Também é possivel incluir isso apertando com o botão direito e seguindo Properties > Build > Output e ativar a caixa Documentation File
     var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 
@@ -107,6 +109,11 @@ builder.Services.AddSwaggerGen(options =>
 
 //Adiciona o serviço Swagger
 builder.Services.AddSwaggerGen();
+
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 
 var app = builder.Build();
 

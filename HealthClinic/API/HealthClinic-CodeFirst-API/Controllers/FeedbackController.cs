@@ -31,6 +31,11 @@ namespace HealthClinic_CodeFirst_API.Controllers
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
@@ -45,6 +50,12 @@ namespace HealthClinic_CodeFirst_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Método para alterar o feedback
+        /// </summary>
+        /// <param name="id">O id do feedback alterado</param>
+        /// <param name="feedback">O conteúdo a ser modificado</param>
+        /// <returns>Um código de sucesso</returns>
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, Feedback feedback)
         {

@@ -42,6 +42,7 @@ namespace PrimeiroProjeto.Controllers
                     {
                     //Formato da claim
                     new Claim(JwtRegisteredClaimNames.Jti,usuarioBusca.IdUsuario.ToString()),
+                    //Muito Cuidado aqui, as claims não podem se repetir de jeito algum. DOIS JTI DÁ PROBLEMA DE TOKEN INVÁLIDO
                     new Claim(JwtRegisteredClaimNames.Email,usuarioBusca.Email),
                     new Claim(ClaimTypes.Role,usuarioBusca.Permissao.ToString()),
 
